@@ -1,1 +1,1 @@
-server for messanger
+server for messanger :)
