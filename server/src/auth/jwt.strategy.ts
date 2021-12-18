@@ -3,7 +3,7 @@ import { PassportStrategy } from "@nestjs/passport";
 import { ExtractJwt, Strategy } from "passport-jwt";
 import { HttpStatus } from "@nestjs/common";
 import { HttpException } from "@nestjs/common";
-import { Logger } from "@nestjs/common";
+
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
@@ -14,14 +14,11 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
             ignoreExpiration: false
         })
     }
-    async validate(payload: any): Promise<any> {
-        Logger.log('payload: ');
-        Logger.log(payload);
-        const user = null // u shoud fetch user;
-        if (!user) {
-            return payload
-            // throw new HttpException('Invalid token', HttpStatus.UNAUTHORIZED);    
-        }    
+    async validate(payload: {id: string}): Promise<{id: string}> {
+        if (!payload) {
+            throw new HttpException('Invalid token', HttpStatus.UNAUTHORIZED);    
+        }  
+        const user = {...payload};
         return user;
     }
 }
