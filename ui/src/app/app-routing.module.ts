@@ -7,7 +7,7 @@ import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {
-    path: '', component: RegisterComponent
+    path: '', component: LandinngComponent, canActivate: [LandingCanActivate]
   },
   {
     path: 'login', component: LoginComponent

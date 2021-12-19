@@ -109,5 +109,8 @@
       }
     }
   },
-  "defaultProject": "messanger"
+  "defaultProject": "messanger",
+  "cli": {
+    "analytics": false
+  }
 }
