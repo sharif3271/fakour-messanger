@@ -1,0 +1,78 @@
+ .login-form{
+  position: relative;
+  width: 21vw;
+  height: auto;
+  background-color: #FFFF;
+  display: flex;
+  align-items: center;
+  border: 2px solid #F5F5F5;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.16);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   margin: auto;
+}
+.form-header> p{
+  display: block;
+  color: #2C7D78;
+  box-sizing: border-box;
+  margin-left: 5px;
+  font-size: 16px;
+  line-height: 17px;
+  margin-top: 5px;
+
+}
+.form-header{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #EEEEEE;
+}
+.login-form > form{
+  display: flex;
+  flex-direction: column;
+  height: 54vh;
+  margin-top: 50px;
+
+}
+.input-txt{
+  width:96.5% ;
+  height:4vh ;
+  margin-top: 22px;
+  font-size: 15px;
+  border: 1px solid #A1A1A1;
+}
+.btn{
+  background-color: #009688;
+  border: none;
+  color: #EEEEEE;
+  text-align: center;
+  width: 100%;
+  font-size: 15px;
+  height: 5vh;
+}
+input::placeholder
+{
+    padding-left: 10px;   
+}
+.txt{
+  color: red;
+  
+}
+.btn:hover{
+  background-color: #05b4a3;
+  cursor: pointer;
+}
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+.pass-txt a{
+  color: #009688;
+  margin: 60px;
+  }
+ .account-txt a{
+    color: #009688;
+    margin: 55px;
+  }
