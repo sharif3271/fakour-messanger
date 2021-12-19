@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
     providedIn: 'root'
 })
 export class UserService {
-    url = 'localhost:4000';
+    url = 'http://localhost:4000';
 
     constructor(private http: HttpClient) {}
     login(userCredentials: {phoneNumber: string; password: string}): Observable<{token: string}> {
