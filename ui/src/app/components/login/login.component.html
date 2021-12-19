@@ -11,6 +11,6 @@ login
     <span class="txt" *ngIf="formControl['password'].touched && formControl['password'].hasError('hasNumber')">password be 8 charecters!</span>
     <input class="input-txt btn" type="submit" value="Login">
     <div class="pass-txt"><a href="#">Forget password?</a></div>
-    <div class="account-txt"><a href="#"> Create New account </a></div>
+    <div class="account-txt"><a [routerLink]="['/register']" routerLinkActive="router-link-active"> Create New account </a></div>
   </form>
 </div>
