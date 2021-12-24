@@ -42,7 +42,7 @@ export class UserServices {
     async getAllUsers(req) {
         const users = await this.usersRepo.find();
         return users.filter(user => user.id !== req.user.id).map(user => ({
-            phoneNumber: user.phoneNumber,
+            phoneNumber: '0' + user.phoneNumber,
             name: user.firstName + ' ' + user.lastName,
             userId: user.id
         }))

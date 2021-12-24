@@ -1,0 +1,1 @@
+export { isValidMobile } from '../user-entity/utils';

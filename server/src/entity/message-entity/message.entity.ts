@@ -1,5 +1,6 @@
+import { ConversationEntity } from '../conversation-entity';
 import { Column, Entity, PrimaryGeneratedColumn, Index,
-    PrimaryColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+    BeforeInsert, BeforeUpdate, ManyToOne } from 'typeorm';
 
 export enum MessageType {
     file = 'FILE',
@@ -13,16 +14,12 @@ export class MessageEntity {
 
     @PrimaryGeneratedColumn() id: string;
 
-    @Index('sender-phoneNumber-index')
     @Column({
-        unique: true,
         type: 'unsigned big int',
     })
     senderPhoneNumber: number;
 
-    @Index('reciver-phoneNumber-index')
     @Column({
-        unique: true,
         type: 'unsigned big int',
     })
     reciverPhoneNumber: number;
@@ -47,9 +44,25 @@ export class MessageEntity {
     })
     seen: boolean;
 
-    @CreateDateColumn()
-    createDate: Date;
+    @Column('integer')
+    createDate: number;
 
-    @UpdateDateColumn({nullable: true})
-    updateDate: Date;   
+    @Column({type: 'integer', nullable: true})
+    updateDate: number;
+
+    @Column()
+    conversationId: number;
+
+    @ManyToOne(() => ConversationEntity, conversation => conversation.messages)
+    conversation: ConversationEntity;
+    
+    @BeforeInsert()
+    beforInsert() {
+        this.createDate = (new Date()).getTime();
+    }
+
+    @BeforeUpdate()
+    beforUpdate() {
+        this.updateDate = (new Date()).getTime();
+    }
 }
