@@ -3,6 +3,7 @@ import { PassportStrategy } from "@nestjs/passport";
 import { ExtractJwt, Strategy } from "passport-jwt";
 import { HttpStatus } from "@nestjs/common";
 import { HttpException } from "@nestjs/common";
+import { IAuthUser } from "src/entity/user-entity/user.model";
 
 
 @Injectable()
@@ -14,7 +15,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
             ignoreExpiration: false
         })
     }
-    async validate(payload: {id: string}): Promise<{id: string}> {
+    async validate(payload: IAuthUser): Promise<IAuthUser> {
         if (!payload) {
             throw new HttpException('Invalid token', HttpStatus.UNAUTHORIZED);    
         }  

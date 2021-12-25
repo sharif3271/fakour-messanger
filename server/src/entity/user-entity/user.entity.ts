@@ -1,5 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn, Index, BeforeInsert } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, Index, BeforeInsert, ManyToMany, JoinTable } from 'typeorm';
 import { hashPassword } from './utils';
+import { ConversationEntity } from '../conversation-entity';
 
 @Entity()
 export class UserEntity {
@@ -38,5 +39,8 @@ export class UserEntity {
     @BeforeInsert()
     async hashPassword() {
         this.password = await hashPassword(this.password);
-    }    
+    }
+    
+    @ManyToMany(() => ConversationEntity)
+    conversations: ConversationEntity[]
 }

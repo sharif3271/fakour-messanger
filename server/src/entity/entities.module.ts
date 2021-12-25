@@ -2,19 +2,23 @@ import { Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { UserServices, UserController, UserEntity } from './user-entity';
 import { MessageController, MessageEntity, MessageServices} from './message-entity';
+import { ConversationServices, ConversationEntity, ConversationController} from './conversation-entity';
 import { AuthModule } from "src/auth/auth.module";
 
 const entities = [
     UserEntity,
-    MessageEntity
+    MessageEntity,
+    ConversationEntity,
 ];
 const providers = [
     UserServices,
-    MessageServices
+    MessageServices,
+    ConversationServices,
 ];
 const controlers = [
     UserController,
-    MessageController
+    MessageController,
+    ConversationController,
 ];
 
 @Module({
