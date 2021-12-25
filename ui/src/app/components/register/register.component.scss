@@ -50,9 +50,13 @@
           background-color: #05b4a3;
           cursor: pointer;
         }
+        &:disabled{
+         background-color: #0096887c;
+
+        }
       }
       &::placeholder {
-        padding-left: 10px; 
+        padding-left: 10px;
       }
       &.ng-invalid.ng-touched {
         border: 1px solid red;
@@ -64,3 +68,24 @@
   }
 
 }
+// @media screen and (min-width: 1350px) {
+//   .html {
+//     zoom: 1;
+//   }
+//   .register-form{
+//    background-color:black;
+//    height: auto;
+
+//   }
+// }
+// @media screen and (min-width: 600px) {
+//   .html {
+//     zoom: 1;
+//   }
+//   .register-form{
+//    background-color:blue;
+//    height: auto;
+
+//   }
+// }
+

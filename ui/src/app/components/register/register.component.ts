@@ -1,6 +1,8 @@
+import { IUserCreateModel } from './../../models/user.model';
+import { UserService } from './../../service/user.service';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
 @Component({
     selector: 'app-msg-register',
     templateUrl: './register.component.html',
@@ -11,7 +13,7 @@ export class RegisterComponent implements OnInit{
   submitted=false;
   registerForm!: FormGroup;
 
-constructor(private formBuilder:FormBuilder) {
+constructor(private formBuilder:FormBuilder,private userService:UserService,private router:Router) {
 
 }
   ngOnInit(): void {
@@ -39,8 +41,18 @@ get fromControl(): { [key :string]:AbstractControl}{
   return this.registerForm.controls;
 }
 onSubmit(){
-  console.log(this.registerForm);
-  return this.submitted=true;
+  console.log(this.registerForm.value);
+  const userCreateDto:IUserCreateModel={
+    firstName:this.registerForm.value.firstName,
+    lastName:this.registerForm.value.lastName,
+    phoneNumber:this.registerForm.value.phoneNumber,
+    password:this.registerForm.value.password,
+  }
+  this.userService.createUser(userCreateDto).subscribe((res) =>{
+    this.router.navigateByUrl('/Login');
+    (error: any)=>console.log(error);
+
+  })
 
 
 }
