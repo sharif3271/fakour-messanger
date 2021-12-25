@@ -49,7 +49,7 @@ onSubmit(){
     password:this.registerForm.value.password,
   }
   this.userService.createUser(userCreateDto).subscribe((res) =>{
-    this.router.navigateByUrl('/Login');
+    this.router.navigate(['/login']);
     (error: any)=>console.log(error);
 
   })
