@@ -14,7 +14,7 @@ export class LandingCanActivate implements CanActivate {
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot
       ): Promise<boolean|UrlTree>|boolean|UrlTree {
-          const isUserLogin = false;
+          const isUserLogin = !!localStorage.getItem('token');
           if (isUserLogin) {
               return true;
           } else {

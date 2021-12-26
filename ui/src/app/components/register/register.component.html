@@ -3,19 +3,19 @@
     <p>Create New Account</p>
   </div>
   <form [formGroup]="registerForm" (submit)="onSubmit()" >
-    <input class="input-size" type="text" formControlName="firstName" placeholder="first name" />
-    <span class="text-red" *ngIf="fromControl['firstName'].touched&&fromControl['firstName'].errors ">can not be less than 4 characters</span>
-    <input class="input-size" type="text" formControlName="lastName" placeholder="last name" />
-    <span class="text-red" *ngIf="fromControl['lastName'].touched && fromControl['lastName'].errors ">can not be less than 4 characters</span>
-    <input class="input-size"  type="text" formControlName="phoneNumber" placeholder="phone (09XX-XXX-XXXX)" />
-    <span class="text-red" *ngIf="fromControl['phoneNumber'].touched && fromControl['phoneNumber'].hasError('hasCodeNumber')">phoneNumber must be start with 09</span>
-    <span class="text-red" *ngIf="fromControl['phoneNumber'].touched&& fromControl['phoneNumber'].hasError('hasElevenNumbers')">phoneNumber must be 9 number!</span>
-    <input class="input-size" type="password" formControlName="password" placeholder="password" />
-    <span class="text-red" *ngIf="fromControl['password'].touched&& fromControl['password'].hasError('hasNumber')">password most be have 1 number</span>
-    <span class="text-red" *ngIf="fromControl['password'].touched&& fromControl['password'].hasError('hasSmallCase')">password most be have 1 characters!</span>
-    <input class="input-size" type="password" formControlName="retypePassword" placeholder="Retype password" />
+    <input type="text" formControlName="firstName" placeholder="first name" />
+    <span *ngIf="fromControl['firstName'].touched && fromControl['firstName'].errors ">can not be less than 4 characters</span>
+    <input type="text" formControlName="lastName" placeholder="last name" />
+    <span *ngIf="fromControl['lastName'].touched && fromControl['lastName'].errors ">can not be less than 4 characters</span>
+    <input type="text" formControlName="phoneNumber" placeholder="phone (09XX-XXX-XXXX)" />
+    <span *ngIf="fromControl['phoneNumber'].touched && fromControl['phoneNumber'].hasError('hasCodeNumber')">phoneNumber must be start with 09</span>
+    <span *ngIf="fromControl['phoneNumber'].touched && fromControl['phoneNumber'].hasError('hasElevenNumbers')">phoneNumber must be 9 number!</span>
+    <input type="password" formControlName="password" placeholder="password" />
+    <span *ngIf="fromControl['password'].touched && fromControl['password'].hasError('hasNumber')">password most be have 1 number</span>
+    <span *ngIf="fromControl['password'].touched && fromControl['password'].hasError('hasSmallCase')">password most be have 1 characters!</span>
+    <input type="password" formControlName="retypePassword" placeholder="Retype password" />
     <span class="text-red" *ngIf="fromControl['retypePassword'].touched&& fromControl['retypePassword'].hasError('NoPasswordMatch')"> Confirm Password does not match</span>
-    <input class="input-size btn" type="submit" value="Register" />
+    <input class="btn" type="submit" value="Register" [disabled]="registerForm.invalid" [routerLink]="['/login']" />
   </form>
 
 </div>

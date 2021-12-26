@@ -33,7 +33,7 @@ export class UserServices {
     async login(body: {phoneNumber: string, password: string}) {
         const loginDto = new LoginDto(body.phoneNumber, body.password);
         const user = await this.usersRepo.findOne({ where: {phoneNumber: loginDto.phoneNumber}})
-        if (user && (isSamePass(loginDto.password, user.password))) {
+        if (user && (await isSamePass(loginDto.password, user.password))) {
             return this.generateToken(user);
         } else {
             throw new HttpException('user credentials is not valid', 401);
@@ -42,7 +42,7 @@ export class UserServices {
     async getAllUsers(req) {
         const users = await this.usersRepo.find();
         return users.filter(user => user.id !== req.user.id).map(user => ({
-            phoneNumber: user.phoneNumber,
+            phoneNumber: '0' + user.phoneNumber,
             name: user.firstName + ' ' + user.lastName,
             userId: user.id
         }))
