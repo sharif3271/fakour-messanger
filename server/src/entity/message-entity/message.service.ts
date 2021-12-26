@@ -37,19 +37,38 @@ export class MessageServices {
     // UTILS
     async getConversation(req: ISendMessageReq, users: UserEntity[]): Promise<ConversationEntity> {
         return await this.conversationRepo.findOne({where: {id: req.body.conversationId}}) ||
-               await this.conversationRepo.findOne({where: {
-                   id: (await this.messageRepo.findOne({where: {
-                       senderPhoneNumber: users[0].phoneNumber,
-                       reciverPhoneNumber: users[1].phoneNumber
-                   }})).conversationId
-               }}) ||
+               await this.getPreviouseConversation(users) ||
                await this.conversationRepo.save(this.conversationRepo.create({users}))
     }
+
+    async getPreviouseConversation(users: UserEntity[]) {
+        const messages = await this.messageRepo.createQueryBuilder()
+        .where({
+            senderPhoneNumber: users[0].phoneNumber,
+            reciverPhoneNumber: users[1].phoneNumber
+        })
+        .orWhere({
+            senderPhoneNumber: users[1].phoneNumber,
+            reciverPhoneNumber: users[0].phoneNumber
+        })
+        .getMany();
+        console.log(messages);
+        if (messages?.length) {
+            return await this.conversationRepo.findOne({
+                where: {
+                    id: messages[0].conversationId
+                }
+            })
+        } else {
+            return null
+        }
+    }
+
     async getUsers(req: ISendMessageReq): Promise<UserEntity[]> {
         try {
             const reciverUser = await this.usersRepo.findOne({where: {phoneNumber: parseInt(req.body.reciverPhoneNumber.substring(1), 10)}});
             const senderUser = await this.usersRepo.findOne({where: {id: req.user.id}});
-            if (reciverUser && senderUser) {
+            if (reciverUser && senderUser && (senderUser.id !== reciverUser.id)) {
                 return [senderUser, reciverUser]
             } else {
                 this.notAcceptable();
