@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "@nestjs/typeorm": "^8.0.2",
-    "typeorm": "^0.2.41"
+    "-": "^0.0.1",
+    "@angular/cli": "^13.1.2",
+    "g": "^2.0.1"
   }
 }
