@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { LandingCanActivate } from './gaurds/landing.gaurd';
-
+import {MatDialogModule} from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { LandinngComponent } from './components/landing/landing.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ModalcontentComponent } from './components/modalcontent/modalcontent.component';
+import { ModalComponent } from './components/modal/modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -17,7 +18,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     LoginComponent,
     LandinngComponent,
-    RegisterComponent
+    RegisterComponent,
+    ModalcontentComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [LandingCanActivate],
   bootstrap: [AppComponent]
