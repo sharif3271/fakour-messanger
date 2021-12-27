@@ -8,18 +8,26 @@ import { ModalcontentComponent } from './components/modalcontent/modalcontent.co
 import { ModalComponent } from './components/modal/modal.component';
 const routes: Routes = [
   {
-    path: '', component: LandinngComponent, canActivate: [LandingCanActivate]
+    path: '',
+    component: LandinngComponent,
+    canActivate: [LandingCanActivate],
   },
   {
-    path: 'login', component: LoginComponent
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path: 'register', component: RegisterComponent,
-  }
+    path: 'register',
+    component: RegisterComponent,
+  },
+  {
+    path: 'tempPath', //Temprary path for landing test
+    component: LandinngComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
