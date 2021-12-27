@@ -4,6 +4,7 @@ import { LandingCanActivate } from './gaurds/landing.gaurd';
 import { LoginComponent } from './components/login/login.component';
 import { LandinngComponent } from './components/landing/landing.component';
 import { RegisterComponent } from './components/register/register.component';
+import { PasswordComponent } from './components/password/password.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,9 @@ const routes: Routes = [
   },
   {
     path: 'register', component: RegisterComponent,
+  },
+  {
+    path:'password', component: PasswordComponent, 
   }
 ];
 
