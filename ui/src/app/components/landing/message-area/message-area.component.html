@@ -1,3 +1,9 @@
 <div class="message-area">
-    <div class="message-bar"></div>
+  <div class="message-bar"></div>
+  <div class="chat-area" *ngIf="!chatActive">
+    
+    <img class="chat-icon" src="../../../../assets/chat.svg" alt="chat" />
+    <h3 class="start-chat">Start a conversation ...</h3>
   </div>
+ 
+</div>

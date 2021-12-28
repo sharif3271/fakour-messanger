@@ -14,6 +14,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LeftMenueComponent } from './components/landing/left-menue/left-menue.component';
 import { MessageAreaComponent } from './components/landing/message-area/message-area.component';
+import { FriendComponent } from './components/landing/left-menue/friend/friend.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MessageAreaComponent } from './components/landing/message-area/message-
     ModalComponent,
     LeftMenueComponent,
     MessageAreaComponent,
+    FriendComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 .message-area {
   background-color: #d7cfcc;
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 65vw;
   border-bottom-right-radius: 10px;
@@ -12,5 +13,28 @@
     background-color: #ededed;
     border-bottom: 1px solid rgba(169, 169, 169, 0.548);
     border-top-right-radius: 10px;
+  }
+
+  .chat-area {
+    align-items: center;
+    background-color: #ffffff;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='59' height='59' viewBox='0 0 100 100'%3E%3Cg stroke='%23CCC' stroke-width='0' %3E%3Crect fill='%23F5F5F5' x='-60' y='-60' width='106' height='240'/%3E%3C/g%3E%3C/svg%3E");
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    justify-content: center;
+
+    .chat-icon {
+      width: 8vw;
+
+      cursor: pointer;
+
+    }
+  }
+
+  .start-chat {
+    font-size: 2rem;
   }
 }

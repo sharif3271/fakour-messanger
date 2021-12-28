@@ -6,6 +6,7 @@
   width: 25vw;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
+  border-right: 1px solid rgba(169, 169, 169, 0.548);;
 
   .contianer {
     width: 100%;
@@ -27,7 +28,7 @@
       align-items: center;
       height: 10%;
       background-color: #ededed;
-      border-right: 1px solid rgba(169, 169, 169, 0.548);
+     
       border-top-left-radius: 10px;
     }
 
