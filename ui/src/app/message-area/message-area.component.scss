@@ -1,0 +1,16 @@
+.message-area {
+  background-color: #d7cfcc;
+  display: inline-flex;
+  height: 100%;
+  width: 65vw;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+
+  .message-bar {
+    width: 100%;
+    height: 10%;
+    background-color: #ededed;
+    border-bottom: 1px solid rgba(169, 169, 169, 0.548);
+    border-top-right-radius: 10px;
+  }
+}
