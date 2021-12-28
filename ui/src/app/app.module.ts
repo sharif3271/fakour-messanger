@@ -12,8 +12,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { ModalcontentComponent } from './components/modalcontent/modalcontent.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LeftMenueComponent } from './left-menue/left-menue.component';
-import { MessageAreaComponent } from './message-area/message-area.component';
+import { LeftMenueComponent } from './components/landing/left-menue/left-menue.component';
+import { MessageAreaComponent } from './components/landing/message-area/message-area.component';
 
 @NgModule({
   declarations: [
