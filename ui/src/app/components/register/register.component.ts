@@ -35,6 +35,9 @@ constructor(private formBuilder:FormBuilder,private userService:UserService,priv
        validator :CustomValidators.passwordMatchValidator
     }
    );
+   if (this.userService.registerUser) {
+     this.registerForm.patchValue(this.userService.registerUser);
+   }
   }
 
 get fromControl(): { [key :string]:AbstractControl}{

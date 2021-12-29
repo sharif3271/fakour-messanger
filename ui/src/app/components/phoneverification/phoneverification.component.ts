@@ -13,21 +13,18 @@ export class phoneVerification {
    //Add 'implements OnInit' to the class.
 
  }
- move(e:any,previous:any,corrent:any,next:any){
-   var length = corrent.value.length;
-   var maxlength = corrent.getAttribute('maxLength');
-    if(length ==  maxlength){
-      if(next != ""){
+ move(e:any, previous: HTMLInputElement | null, current: HTMLInputElement, next: HTMLInputElement | null) {
+   const length = current.value.length;
+    if(length ===  1){
+      if(next){
         next.focus();
       }
     }
     if(e.key === "Backspace" ){
-      if(previous != ""){
+      if(previous){
         previous.focus();
       }
-
     }
-   console.log(corrent,previous);
  }
 
 
