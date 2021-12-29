@@ -1,51 +1,56 @@
 .register-form{
   position: relative;
   width: 19vw;
+  min-width: 325px;
   height: auto;
   background-color: #FFFF;
   display: flex;
   align-items: center;
-  border: 2px solid #F5F5F5;
   box-sizing: border-box;
   box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.16);
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
   .form-header{
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
     background-color: #EEEEEE;
+    border-radius: 4px;
     > p {
-      display: block;
       color: #2C7D78;
-      box-sizing: border-box;
-      margin-left: 5px;
       font-size: 16px;
-      line-height: 17px;
-      margin-top: 5px;
+      padding-left: 12px;
+      margin: 0;
     }
   }
   > form{
     display: flex;
     flex-direction: column;
-    // height: 59vh;
-    height: auto;
-    padding: 42px 20px;
+    height: 100%;
+    width: 100%;
+    padding: 8px 22px 30px 22px;
     .container{
       position: relative;
-
-
+      display: flex;
+      align-items: center;
+      margin-top: 22px;
+      input {
+        margin: 0 !important;
+      }
+      ::ng-deep {
+        .mat-button-wrapper {
+          color: gray;
+        }
+      }
     }
     button{
       position: absolute;
-      right: 27px;
-      top: 23px;
-      width: 0px;
-      height: 0px;
+      right: 0;
       border: none;
-
     }
     input {
       // width:14vw ;
@@ -54,10 +59,9 @@
       font-size: 15px;
       border: 1px solid #A1A1A1;
       padding-left: 15px;
-      min-width: 14vw;
-      min-height: 4vh;
+      min-height: 40px;
       width: 100%;
-      height: 100%;
+      border-radius: 4px;
       &.btn{
         background-color: #009688;
         border: none;
@@ -77,7 +81,8 @@
         }
       }
       &::placeholder {
-        padding-left: 5px;
+        // padding-left: 5px;
+        color: darkgray;
       }
       &.ng-invalid.ng-touched {
         border: 1px solid red;
