@@ -43,7 +43,8 @@ return this.passwordForm.controls;
       this.passwordForm.reset();
     }
   })
-
+}
+}
  
 
 export class CustomValidators{
@@ -67,5 +68,4 @@ export class CustomValidators{
     }
   }
 }
-  }
-}
+  
