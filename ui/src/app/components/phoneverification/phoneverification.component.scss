@@ -1,0 +1,106 @@
+.container{
+  position: relative;
+  width: 20vw;
+  height: 55vh;
+  background-color: #FFFF;
+   padding-top: 60px;
+  border: 2px solid #F5F5F5;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.16);
+  display: flex;
+  justify-content: center;
+
+  .container-header{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background-color: #EEEEEE;
+    > p {
+      display: block;
+      color: #2C7D78;
+      box-sizing: border-box;
+      margin-left: 5px;
+      font-size: 18px;
+      line-height: 17px;
+      margin-top: 5px;
+      font-weight: 500;
+    }
+  }.container-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     .btn{
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 10px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      position: absolute;
+      bottom: 15px;
+
+
+     }
+
+    > h5 {
+      width: 270px;
+      font-weight: 600;
+      font-size: 13px;
+      color: rgb(54, 50, 50);
+
+    }
+    > h1 {
+      color: #4CAF50;
+      font-weight: 500;
+      text-align: center;
+    // }input.code-input {
+    //   font-size: 1.5em;
+    //   width: 1em;
+    //   text-align: center;
+    //   flex: 1 0 1em;
+
+    // }
+    // input {
+    //   padding: 10px 13px;
+    //   margin-left: 5px;
+    //   margin-top: 10px;
+
+
+    // } &:invalid {
+    //   box-shadow: none;
+    // } &:focus {
+    //   outline: none;
+     }span {
+      color: rgb(61, 57, 57);
+      margin-top: 7px;
+    }#form {
+      max-width: 240px;
+      margin: 12px auto 0;
+
+      input {
+        margin: 0 5px;
+        text-align: center;
+        line-height: 60px;
+        font-size: 50px;
+        border: solid 1px #ccc;
+        box-shadow: 0 0 5px #ccc inset;
+        outline: none;
+        width: 15%;
+        transition: all .2s ease-in-out;
+        border-radius: 3px;
+
+        &:focus {
+          box-shadow: 0 0 5px rgb(141, 139, 141) inset;
+        }
+        &::selection {
+          background: transparent;
+        }
+      }
+    }
+  }
+
+}

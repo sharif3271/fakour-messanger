@@ -10,7 +10,13 @@
     <input type="text" formControlName="phoneNumber" placeholder="phone (09XX-XXX-XXXX)" />
     <span *ngIf="fromControl['phoneNumber'].touched && fromControl['phoneNumber'].hasError('hasCodeNumber')">phoneNumber must be start with 09</span>
     <span *ngIf="fromControl['phoneNumber'].touched && fromControl['phoneNumber'].hasError('hasElevenNumbers')">phoneNumber must be 9 number!</span>
-    <input type="password" formControlName="password" placeholder="password" />
+    <!-- <input  type="password" formControlName="password" placeholder="password" /> -->
+    <div class="container">
+    <input matInput [type]="hide ? 'password' : 'text'" placeholder="password" formControlName="password">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+    </div>
     <span *ngIf="fromControl['password'].touched && fromControl['password'].hasError('hasNumber')">password most be have 1 number</span>
     <span *ngIf="fromControl['password'].touched && fromControl['password'].hasError('hasSmallCase')">password most be have 1 characters!</span>
     <input type="password" formControlName="retypePassword" placeholder="Retype password" />

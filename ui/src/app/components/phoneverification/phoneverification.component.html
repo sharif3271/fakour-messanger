@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="container-header">
+    <p>verification code</p>
+  </div>
+  <div class="container-content">
+    <h1>Verify 09124789342</h1>
+    <h5>
+      Enter your passcode to complete registration
+
+    </h5>
+    <div id="form">
+      <input type="text" maxLength="1" #input1 (keyup)="move($event ,'', input1 ,input2 )"  />
+      <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" #input2 (keyup)="move($event ,input1, input2 ,input3 )"/>
+      <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" #input3 (keyup)="move($event ,input2, input3 ,input4 )"/>
+      <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" #input4 (keyup)="move($event ,input3, input4 ,input5 )"/>
+      <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" #input5 (keyup)="move($event ,input4, input5 ,'' )"/>
+    </div>
+    <span>Enter 5-digit code</span>
+    <button class="btn">Next</button>
+
+  </div>
+
+</div>
