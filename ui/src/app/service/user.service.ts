@@ -18,4 +18,12 @@ export class UserService {
       return this.http.post(this.url + '/user/create', user);
 
     }
+
+    getAllUsers(): Observable<any> {
+        return this.http.get<any>(this.url + '/user/all', {
+            headers: {
+                'Authorization': (localStorage.getItem('token') || '')
+            }
+        });
+    }
 }
