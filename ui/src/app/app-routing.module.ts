@@ -4,8 +4,8 @@ import { LandingCanActivate } from './gaurds/landing.gaurd';
 import { LoginComponent } from './components/login/login.component';
 import { LandinngComponent } from './components/landing/landing.component';
 import { RegisterComponent } from './components/register/register.component';
-import { UserselectionComponent } from './components/userselection/userselection.component';
-import { IconmessageComponent } from './components/iconmessage/iconmessage.component';
+import { phoneVerification } from './components/phoneverification/phoneverification.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -20,10 +20,7 @@ const routes: Routes = [
     path: 'register', component: RegisterComponent,
   },
   {
-    path: 'iconmessage', component: IconmessageComponent,
-  },
-  {
-    path: 'userselection', component: UserselectionComponent,
+    path: 'phoneverification', component: phoneVerification,
   }
 ];
 

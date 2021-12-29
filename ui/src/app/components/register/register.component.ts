@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 
 })
 export class RegisterComponent implements OnInit{
-  submitted=false;
+  hide=true;
   registerForm!: FormGroup;
 
 constructor(private formBuilder:FormBuilder,private userService:UserService,private router:Router) {
