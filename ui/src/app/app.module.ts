@@ -9,9 +9,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { LandinngComponent } from './components/landing/landing.component';
 import { RegisterComponent } from './components/register/register.component';
-import { ModalcontentComponent } from './components/modalcontent/modalcontent.component';
-import { ModalComponent } from './components/modal/modal.component';
+import { UserselectionComponent } from './components/userselection/userselection.component';
+import { IconmessageComponent } from './components/iconmessage/iconmessage.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {AngularmatrialModule} from './shared/angularmatrial/angularmatrial.module'
 
 @NgModule({
   declarations: [
@@ -19,8 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     LandinngComponent,
     RegisterComponent,
-    ModalcontentComponent,
-    ModalComponent,
+    UserselectionComponent,
+    IconmessageComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    AngularmatrialModule,
   ],
   providers: [LandingCanActivate],
   bootstrap: [AppComponent]
