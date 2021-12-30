@@ -21,6 +21,10 @@ const routes: Routes = [
   },
   {
     path: 'phoneverification', component: phoneVerification,
+  },
+  {
+    path: 'temp',
+    component: LandinngComponent
   }
 ];
 

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageAreaComponent implements OnInit {
   chatActive = false;
+
   constructor() {}
   ngOnInit(): void {}
 }

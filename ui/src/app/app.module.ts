@@ -14,7 +14,7 @@ import { IconmessageComponent } from './components/iconmessage/iconmessage.compo
 import { ReactiveFormsModule } from '@angular/forms';
 import { LeftMenueComponent } from './components/landing/left-menue/left-menue.component';
 import { MessageAreaComponent } from './components/landing/message-area/message-area.component';
-import { FriendComponent } from './components/landing/left-menue/friend/friend.component';
+import { ConversationComponent } from './components/landing/left-menue/conversation/conversation.component';
 import {AngularmatrialModule} from './shared/angularmatrial/angularmatrial.module'
 import { phoneVerification } from './components/phoneverification/phoneverification.component'
 
@@ -26,7 +26,7 @@ import { phoneVerification } from './components/phoneverification/phoneverificat
     RegisterComponent,
     LeftMenueComponent,
     MessageAreaComponent,
-    FriendComponent,
+    ConversationComponent,
     UserselectionComponent,
     IconmessageComponent,
     phoneVerification,
