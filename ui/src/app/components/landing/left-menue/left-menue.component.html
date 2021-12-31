@@ -12,6 +12,11 @@
         placeholder="Search or start a new chat"
       />
     </div>
-    <app-conversation></app-conversation>
+    <div class="conversetion-container">
+      <app-conversation
+        *ngFor="let conversetion of conversationList"
+        [conversation]="conversetion"
+      ></app-conversation>
+    </div>
   </div>
 </div>

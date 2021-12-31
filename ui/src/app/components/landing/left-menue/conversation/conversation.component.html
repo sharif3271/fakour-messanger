@@ -4,10 +4,18 @@
   </div>
   <div class="conversetion-container">
     <div class="phone-and-time">
-      <span class="title">Reza</span>
-      <div class="time">17:45</div>
+      <span class="title">{{ conversation.title }}</span>
+      <div class="time">
+        {{ calculateTime(conversation.lastMessage.createDate) }}
+      </div>
     </div>
-    <div class="last-massage">Hi There!</div>
+    <div class="last-massage">
+      <mat-icon class="msg-stuats msg-stuats-one">check</mat-icon>
+      <mat-icon class="msg-stuats msg-stuats-two">check</mat-icon>
+      <div class="massage-content">
+        {{ conversation.lastMessage.contentText }}
+      </div>
+    </div>
   </div>
 </div>
 <hr />
