@@ -11,7 +11,11 @@
     </div>
     <div class="last-massage">
       <mat-icon class="msg-stuats msg-stuats-one">check</mat-icon>
-      <mat-icon class="msg-stuats msg-stuats-two">check</mat-icon>
+      <mat-icon
+        *ngIf="conversation.lastMessage.seen"
+        class="msg-stuats msg-stuats-two"
+        >check</mat-icon
+      >
       <div class="massage-content">
         {{ conversation.lastMessage.contentText }}
       </div>

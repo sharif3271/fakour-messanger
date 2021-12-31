@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./message-area.component.scss'],
 })
 export class MessageAreaComponent implements OnInit {
-  chatActive = false;
+  chatActive = true;
 
   constructor() {}
   ngOnInit(): void {}

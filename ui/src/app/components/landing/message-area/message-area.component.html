@@ -1,7 +1,26 @@
 <div class="message-area">
   <div class="message-bar"></div>
-  <div class="chat-area" *ngIf="!chatActive">
-    <img class="chat-icon" src="../../../../assets/chat.svg" alt="chat" />
-    <h3 class="start-chat">Start a conversation ...</h3>
+  <div class="chat-area" *ngIf="chatActive; else startChat">
+    <div class="chat-massage-area">
+      <div class="massage send-massage">
+        <div class="massage-container">
+          <span class="massage-content">Hi there</span>
+        </div>
+      </div>
+      <div class="massage receive-message">
+        <div class="massage-container">
+          <span class="massage-content">Hello!</span>
+        </div>
+      </div>
+    </div>
+    <div class="send-massage-area">
+      <input type="text" class="massage-input" placeholder="Type a message" />
+    </div>
   </div>
+  <ng-template #startChat
+    ><div class="chat-area">
+      <img class="chat-icon" src="../../../../assets/chat.svg" alt="chat" />
+      <h3 class="start-chat">Start a conversation ...</h3>
+    </div></ng-template
+  >
 </div>
