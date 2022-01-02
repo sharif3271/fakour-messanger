@@ -21,7 +21,7 @@
     <span *ngIf="fromControl['password'].touched && fromControl['password'].hasError('hasSmallCase')">password most be have 1 characters!</span>
     <input type="password" formControlName="retypePassword" placeholder="Retype password" />
     <span class="text-red" *ngIf="fromControl['retypePassword'].touched&& fromControl['retypePassword'].hasError('NoPasswordMatch')"> Confirm Password does not match</span>
-    <input class="btn" type="submit" value="Register" [disabled]="registerForm.invalid" [routerLink]="['/login']" />
+    <input class="btn" type="submit" value="Register" [disabled]="registerForm.invalid"/>
   </form>
 
 </div>
