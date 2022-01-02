@@ -16,6 +16,7 @@
       <app-conversation
         *ngFor="let conversetion of conversationList"
         [conversation]="conversetion"
+        (conversationSelected)="onConversationSelected(conversetion)"
       ></app-conversation>
     </div>
   </div>

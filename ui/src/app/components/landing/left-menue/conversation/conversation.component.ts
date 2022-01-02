@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { IConversation } from 'src/app/models/conversation.model';
 
 @Component({
@@ -8,9 +8,15 @@ import { IConversation } from 'src/app/models/conversation.model';
 })
 export class ConversationComponent implements OnInit {
   @Input() conversation!: IConversation;
+  @Output() conversationSelected = new EventEmitter<void>();
   constructor() {}
 
   ngOnInit(): void {}
+
+  onSelected() {
+    this.conversationSelected.emit();
+
+  }
 
   calculateTime(date: number) {
     let conversationDate = new Date(date);

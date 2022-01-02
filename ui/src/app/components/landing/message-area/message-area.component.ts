@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IConversation } from 'src/app/models/conversation.model';
 
 @Component({
   selector: 'app-message-area',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./message-area.component.scss'],
 })
 export class MessageAreaComponent implements OnInit {
-  chatActive = true;
-
+  chatActive: boolean = true;
+  @Input() conversetion!: IConversation;
   constructor() {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    
+  }
 }

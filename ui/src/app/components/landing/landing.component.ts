@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
+import { IConversation } from 'src/app/models/conversation.model';
 
 
-const materialModules = [MatIconModule];
+
+
 
 @Component({
   selector: 'app-msg-landing',
@@ -10,6 +11,9 @@ const materialModules = [MatIconModule];
   styleUrls: ['./landing.component.scss'],
 })
 export class LandinngComponent implements OnInit {
+  selectedConversetion!: IConversation;
+
   constructor() {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }
