@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { LandingCanActivate } from './gaurds/landing.gaurd';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,8 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LeftMenueComponent } from './components/landing/left-menue/left-menue.component';
 import { MessageAreaComponent } from './components/landing/message-area/message-area.component';
 import { ConversationComponent } from './components/landing/left-menue/conversation/conversation.component';
-import {AngularmatrialModule} from './shared/angularmatrial/angularmatrial.module'
-import { phoneVerification } from './components/phoneverification/phoneverification.component'
+import { AngularmatrialModule } from './shared/angularmatrial/angularmatrial.module';
+import { phoneVerification } from './components/phoneverification/phoneverification.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +41,6 @@ import { phoneVerification } from './components/phoneverification/phoneverificat
     MatInputModule,
   ],
   providers: [LandingCanActivate],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
