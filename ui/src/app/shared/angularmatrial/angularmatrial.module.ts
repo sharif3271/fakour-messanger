@@ -46,7 +46,6 @@ import {MatRippleModule} from '@angular/material/core';
   declarations: [],
   imports: [
     CommonModule,
-	NgModule,
     MatFormFieldModule,
     MatCardModule,
     MatIconModule,

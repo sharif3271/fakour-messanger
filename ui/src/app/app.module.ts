@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { LandingCanActivate } from './gaurds/landing.gaurd';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,8 +15,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LeftMenueComponent } from './components/landing/left-menue/left-menue.component';
 import { MessageAreaComponent } from './components/landing/message-area/message-area.component';
 import { FriendComponent } from './components/landing/left-menue/friend/friend.component';
-import {AngularmatrialModule} from './shared/angularmatrial/angularmatrial.module'
+import { AngularmatrialModule } from './shared/angularmatrial/angularmatrial.module'
 import { phoneVerification } from './components/phoneverification/phoneverification.component'
+import { AppConfigService } from './service/config.service';
+import { AuthInterceptor } from './service/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,22 @@ import { phoneVerification } from './components/phoneverification/phoneverificat
     AngularmatrialModule,
     MatInputModule,
   ],
-  providers: [LandingCanActivate],
+  providers: [
+    HttpClient,
+    LandingCanActivate,
+    AppConfigService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (config: AppConfigService) => config.loadAppConfig(),
+      multi: true,
+      deps: [AppConfigService]
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
