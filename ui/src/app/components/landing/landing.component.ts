@@ -16,4 +16,7 @@ export class LandinngComponent implements OnInit {
 
   constructor() {}
   ngOnInit(): void {}
+
+
+  
 }
