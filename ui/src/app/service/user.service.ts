@@ -9,6 +9,12 @@ import {AppConfigService} from './config.service';
 })
 export class UserService {
 
+    user!: IUserCreateModel;
+
+    get registerUser() {
+        return this.user;
+    }
+
     constructor(private http: HttpClient, private config: AppConfigService) {}
 
     login(userCredentials: {phoneNumber: string; password: string}): Observable<{token: string}> {
@@ -20,6 +26,7 @@ export class UserService {
     }
 
     createUser(user:IUserCreateModel): Observable<any> {
+      this.user = user;
       return this.http.post(this.config.url + 'user/create', user);
     }
 
