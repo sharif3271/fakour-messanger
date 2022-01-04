@@ -6,7 +6,7 @@ import { MessageEntity } from '../message-entity';
 @Entity()
 export class ConversationEntity {
 
-    @PrimaryGeneratedColumn() id: string;
+    @PrimaryGeneratedColumn() id: number;
 
     @Column({
         type: 'varchar',
@@ -27,7 +27,6 @@ export class ConversationEntity {
     updateDate: Date;
 
     @ManyToMany(() => UserEntity, userEntity => userEntity.conversations)
-    @JoinTable()
     users: UserEntity[];
 
     @OneToMany(() => MessageEntity, message => message.conversation)

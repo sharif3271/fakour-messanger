@@ -8,7 +8,10 @@ export interface ISendMessageBody {
     conversationId?: number;
 }
 
-export interface ISendMessageReq {
-    body: ISendMessageBody;
+export interface IReqUser {
     user: IAuthUser;
+}
+
+export interface ISendMessageReq extends IReqUser{
+    body: ISendMessageBody;
 }

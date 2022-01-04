@@ -4,7 +4,7 @@ import { Injectable } from '@nestjs/common';
 import { MessageEntity } from './message.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { ISendMessageReq } from './message.model';
+import { ISendMessageReq, IReqUser } from './message.model';
 import { ConversationEntity } from '../conversation-entity';
 import { UserEntity } from '../user-entity';
 import { isValidMobile } from './utils';
@@ -33,6 +33,17 @@ export class MessageServices {
         await this.messageRepo.save(message);
         return message;
     }
+    async getConversationMessages(convId: string, req: IReqUser) {
+        if (await this.isUserPartOfConversation(convId, req.user.id)) {
+            return (await this.messageRepo.find({
+                where: {
+                    conversationId: parseInt(convId, 10)
+                }
+            }))
+        } else {
+            throw new HttpException('conversation does not exist.', HttpStatus.UNAUTHORIZED);
+        }
+    }
 
     // UTILS
     async getConversation(req: ISendMessageReq, users: UserEntity[]): Promise<ConversationEntity> {
@@ -40,7 +51,6 @@ export class MessageServices {
                await this.getPreviouseConversation(users) ||
                await this.conversationRepo.save(this.conversationRepo.create({users}))
     }
-
     async getPreviouseConversation(users: UserEntity[]) {
         const messages = await this.messageRepo.createQueryBuilder()
         .where({
@@ -52,7 +62,6 @@ export class MessageServices {
             reciverPhoneNumber: users[0].phoneNumber
         })
         .getMany();
-        console.log(messages);
         if (messages?.length) {
             return await this.conversationRepo.findOne({
                 where: {
@@ -63,7 +72,6 @@ export class MessageServices {
             return null
         }
     }
-
     async getUsers(req: ISendMessageReq): Promise<UserEntity[]> {
         try {
             const reciverUser = await this.usersRepo.findOne({where: {phoneNumber: parseInt(req.body.reciverPhoneNumber.substring(1), 10)}});
@@ -86,7 +94,12 @@ export class MessageServices {
                 throw new HttpException('textContent and reciverPhoneNumber should be provided correctly.', HttpStatus.BAD_REQUEST);            
         }
     }
-
+    async isUserPartOfConversation(convId: string, userId: string) {
+        return (await this.usersRepo.findOne({
+            where : {id: userId},
+            relations: ['conversations']
+        }))?.conversations?.some(ConvItem => String(ConvItem.id) === convId)
+    }
     // ERRORS
     notAcceptable() {
         throw new HttpException('users could not be found.', HttpStatus.NOT_ACCEPTABLE);
