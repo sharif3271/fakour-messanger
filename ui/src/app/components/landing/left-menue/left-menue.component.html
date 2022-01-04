@@ -2,7 +2,7 @@
   <div class="contianer">
     <div class="profile-bar">
       <img class="profile-pic" src="../../../assets/noPic.svg" />
-      <i class="material-icons chat-icon">chat</i>
+      <i class="material-icons chat-icon" (click)="openDialog()">chat</i>
     </div>
     <div class="search-bar">
       <i class="material-icons search-icon">search</i>
@@ -16,6 +16,7 @@
       <app-conversation
         *ngFor="let conversetion of conversationList"
         [conversation]="conversetion"
+        [selectedConversation]="selectedConversetion"
         (conversationSelected)="onConversationSelected(conversetion)"
       ></app-conversation>
     </div>

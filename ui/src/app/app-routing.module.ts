@@ -14,8 +14,7 @@ const routes: Routes = [
     canActivate: [LandingCanActivate],
   },
   {
-    path: 'login',
-    component: LoginComponent,
+    path: 'login',component: LoginComponent,
   },
   {
     path: 'register', component: RegisterComponent,

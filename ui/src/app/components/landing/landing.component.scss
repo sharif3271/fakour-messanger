@@ -1,7 +1,14 @@
 .main-window {
-  border: 1px solid gray;
-  height: 85vh;
-  width: auto;
+  height: 90vh;
+  width: calc(100vw - 90px);
   display: flex;
   border-radius: 10px;
+  margin-top: -44px;
+
+  > app-left-menue {
+    width: 33%;
+  }
+  > app-message-area {
+    flex: 1;
+  }
 }

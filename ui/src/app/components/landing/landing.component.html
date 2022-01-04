@@ -2,7 +2,6 @@
   <app-left-menue (conversetionWasSelected)="selectedConversetion = $event">
   </app-left-menue>
   <app-message-area
-    *ngIf="selectedConversetion"
     [conversetion]="selectedConversetion"
   ></app-message-area>
 </div>

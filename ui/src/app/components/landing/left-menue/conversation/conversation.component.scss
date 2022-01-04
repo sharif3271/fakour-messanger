@@ -4,6 +4,9 @@
   height: 9vh;
   flex-direction: row;
   cursor: pointer;
+  &.is-selected {
+    background-color: #f5f5f5d3;
+  }
 
   &:hover {
     background-color: #f5f5f5d3;

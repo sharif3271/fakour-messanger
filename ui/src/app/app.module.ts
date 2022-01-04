@@ -2,7 +2,6 @@ import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { LandingCanActivate } from './gaurds/landing.gaurd';
-import { MatInputModule } from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,7 +9,6 @@ import { LoginComponent } from './components/login/login.component';
 import { LandinngComponent } from './components/landing/landing.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UserselectionComponent } from './components/userselection/userselection.component';
-import { IconmessageComponent } from './components/iconmessage/iconmessage.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LeftMenueComponent } from './components/landing/left-menue/left-menue.component';
 import { MessageAreaComponent } from './components/landing/message-area/message-area.component';
@@ -22,6 +20,8 @@ import { PasswordComponent } from './components/password/password.compnent';
 import { ConversationComponent } from './components/landing/left-menue/conversation/conversation.component';
 import { MassegeComponent } from './components/landing/message-area/massege/massege.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +32,6 @@ import { MassegeComponent } from './components/landing/message-area/massege/mass
     MessageAreaComponent,
     ConversationComponent,
     UserselectionComponent,
-    IconmessageComponent,
     phoneVerification,
     MassegeComponent,
     PasswordComponent

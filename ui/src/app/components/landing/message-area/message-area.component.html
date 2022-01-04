@@ -1,4 +1,4 @@
-<div class="message-area">
+<div class="message-area" *ngIf="!!conversetion; else conversationNotSelected">
   <div class="message-bar">
     <img class="profile-pic" src="../../../assets/noPic.svg" />
     <div class="phone-and-title">
@@ -12,8 +12,8 @@
     </div>
     
     <div class="send-massage-area">
-      <mat-icon class="send-icon">send</mat-icon>
       <input type="text" class="massage-input" placeholder="Type a message" />
+      <mat-icon class="send-icon">send</mat-icon>
     </div>
   </div>
   <ng-template #startChat
@@ -23,3 +23,7 @@
     </div></ng-template
   >
 </div>
+
+<ng-template #conversationNotSelected>
+  <div class="message-area"></div>
+</ng-template>

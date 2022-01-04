@@ -4,3 +4,9 @@ export interface IUserCreateModel {
   password:string;
   phoneNumber:string;
 }
+
+export interface IUserAccount {
+  name:string;
+  id:string;
+  phoneNumber:string;
+}

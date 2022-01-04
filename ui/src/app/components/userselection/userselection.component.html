@@ -5,9 +5,12 @@
     </button>
 </div>
 <div class="showalluser">
-    
-    <img src="../../../assets/noPic.svg">
+    <div *ngFor='let user of users; let i=index;' class="all_user" (click)="get_iduser(user)">
+        <img class="profile-pic" src="../../../assets/noPic.svg">
+        <div class="phone-num">{{user.phoneNumber}} </div>
+    </div> 
+
 </div>
 <footer>
-    <button class="submit_user">Massage</button>
+    <button (click)="closeDialog()" class="submit_user">Massage</button>
 </footer>
