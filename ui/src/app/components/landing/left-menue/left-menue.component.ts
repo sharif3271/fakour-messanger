@@ -8,6 +8,7 @@ import { UserselectionComponent } from '../../userselection/userselection.compon
   styleUrls: ['./left-menue.component.scss']
 })
 export class LeftMenueComponent implements OnInit {
+ 
 
   constructor(public dialog: MatDialog) { }
   openDialog(): void {
@@ -16,7 +17,7 @@ export class LeftMenueComponent implements OnInit {
     height:'450px',
   });  
      dialogRef.afterClosed().subscribe(result => {
-       console.log('The dialog was closed');
+       
     });
 
   }
@@ -24,3 +25,4 @@ export class LeftMenueComponent implements OnInit {
   }
 
 }
+
