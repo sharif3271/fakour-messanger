@@ -5,6 +5,7 @@ import { IConversation, IMessage } from 'src/app/models/conversation.model';
   templateUrl: './message-area.component.html',
   styleUrls: ['./message-area.component.scss'],
 })
+
 export class MessageAreaComponent implements OnInit {
   chatActive: boolean = true;
   messages!: IMessage[] ;
