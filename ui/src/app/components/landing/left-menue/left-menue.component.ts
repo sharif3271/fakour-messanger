@@ -21,11 +21,9 @@ export class LeftMenueComponent implements OnInit {
   initalconversationList: IConversation[] = [];
   searchResult: IConversation[] = [];
   selectedConversetion!: IConversation;
-  searchInput: string = '';
 
   @Output() conversetionWasSelected = new EventEmitter<IConversation>();
-  @ViewChild('conversationSearchInput', { static: false })
-  convSearchInputRef!: ElementRef;
+
 
   constructor(
     private conversationService: ConversationServices,
@@ -55,13 +53,12 @@ export class LeftMenueComponent implements OnInit {
   }
 
   onConversationSearch(event: Event) {
-    let inpt = (<HTMLInputElement>event.target).value;
-    console.log(inpt);
+    let searchInput = (<HTMLInputElement>event.target).value;
     this.searchResult = [];
+
     for (const conversation of this.initalconversationList) {
       let title: string = conversation.title.toLowerCase();
-      let searchInput: string = this.searchInput.toLowerCase();
-
+      searchInput = searchInput.toLowerCase();
       if (title.includes(searchInput)) {
         this.searchResult.push(conversation);
       }
