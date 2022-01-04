@@ -1,4 +1,3 @@
-login
 <div class="login-form">
   <div class="form-header">
     <p> Login </p>
@@ -10,7 +9,7 @@ login
     <input class="input-txt" type="password" formControlName="password" placeholder="password">
     <span class="txt" *ngIf="formControl['password'].touched && formControl['password'].hasError('hasNumber')">password be 8 charecters!</span>
     <input class="input-txt btn" type="submit" value="Login">
-    <div class="pass-txt"><a href="#">Forget password?</a></div>
+    <div class="pass-txt"><a [routerLink]="['/password']" routerLinkActive="router-link-active">Forget password?</a></div>
     <div class="account-txt"><a [routerLink]="['/register']" routerLinkActive="router-link-active"> Create New account </a></div>
   </form>
 </div>

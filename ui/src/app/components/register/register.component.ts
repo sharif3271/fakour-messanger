@@ -1,3 +1,4 @@
+import { phoneVerification } from './../phoneverification/phoneverification.component';
 import { IUserCreateModel } from './../../models/user.model';
 import { UserService } from './../../service/user.service';
 import { Component, OnInit } from '@angular/core';
@@ -35,6 +36,9 @@ constructor(private formBuilder:FormBuilder,private userService:UserService,priv
        validator :CustomValidators.passwordMatchValidator
     }
    );
+   if (this.userService.registerUser) {
+     this.registerForm.patchValue(this.userService.registerUser);
+   }
   }
 
 get fromControl(): { [key :string]:AbstractControl}{
@@ -48,8 +52,10 @@ onSubmit(){
     phoneNumber:this.registerForm.value.phoneNumber,
     password:this.registerForm.value.password,
   }
+  debugger;
   this.userService.createUser(userCreateDto).subscribe((res) =>{
-    this.router.navigate(['/login']);
+    debugger;
+    this.router.navigate(['/phone-verification']);
     (error: any)=>console.log(error);
 
   })

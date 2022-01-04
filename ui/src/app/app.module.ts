@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { LandingCanActivate } from './gaurds/landing.gaurd';
 import { MatInputModule } from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,11 +14,13 @@ import { IconmessageComponent } from './components/iconmessage/iconmessage.compo
 import { ReactiveFormsModule } from '@angular/forms';
 import { LeftMenueComponent } from './components/landing/left-menue/left-menue.component';
 import { MessageAreaComponent } from './components/landing/message-area/message-area.component';
+import { AngularmatrialModule } from './shared/angularmatrial/angularmatrial.module'
+import { phoneVerification } from './components/phoneverification/phoneverification.component'
+import { AppConfigService } from './service/config.service';
+import { AuthInterceptor } from './service/auth-interceptor';
+import { PasswordComponent } from './components/password/password.compnent';
 import { ConversationComponent } from './components/landing/left-menue/conversation/conversation.component';
-import { AngularmatrialModule } from './shared/angularmatrial/angularmatrial.module';
-import { phoneVerification } from './components/phoneverification/phoneverification.component';
 import { MassegeComponent } from './components/landing/message-area/massege/massege.component';
-
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { MassegeComponent } from './components/landing/message-area/massege/mass
     UserselectionComponent,
     IconmessageComponent,
     phoneVerification,
-    MassegeComponent
+    MassegeComponent,
+    PasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -41,9 +44,23 @@ import { MassegeComponent } from './components/landing/message-area/massege/mass
     BrowserAnimationsModule,
     ReactiveFormsModule,
     AngularmatrialModule,
-    MatInputModule,
   ],
-  providers: [LandingCanActivate],
-  bootstrap: [AppComponent],
+  providers: [
+    HttpClient,
+    LandingCanActivate,
+    AppConfigService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (config: AppConfigService) => config.loadAppConfig(),
+      multi: true,
+      deps: [AppConfigService]
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    }
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -41,6 +41,7 @@ export class UserEntity {
         this.password = await hashPassword(this.password);
     }
     
-    @ManyToMany(() => ConversationEntity)
+    @ManyToMany(() => ConversationEntity, conversation => conversation.users)
+    @JoinTable()
     conversations: ConversationEntity[]
 }
