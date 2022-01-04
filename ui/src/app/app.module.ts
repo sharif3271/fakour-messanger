@@ -19,7 +19,7 @@ import { AuthInterceptor } from './service/auth-interceptor';
 import { PasswordComponent } from './components/password/password.compnent';
 import { ConversationComponent } from './components/landing/left-menue/conversation/conversation.component';
 import { MassegeComponent } from './components/landing/message-area/massege/massege.component';
-
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -43,6 +43,7 @@ import { MassegeComponent } from './components/landing/message-area/massege/mass
     BrowserAnimationsModule,
     ReactiveFormsModule,
     AngularmatrialModule,
+    FormsModule
   ],
   providers: [
     HttpClient,

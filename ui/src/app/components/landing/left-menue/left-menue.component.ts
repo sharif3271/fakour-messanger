@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 import { ConversationServices } from 'src/app/service/conversation.service';
 import { IConversation } from 'src/app/models/conversation.model';
 import { MatDialog } from '@angular/material/dialog';
@@ -11,31 +18,54 @@ import { UserselectionComponent } from '../../userselection/userselection.compon
 })
 export class LeftMenueComponent implements OnInit {
   conversationList: IConversation[] = [];
+  initalconversationList: IConversation[] = [];
+  searchResult: IConversation[] = [];
   selectedConversetion!: IConversation;
-  @Output() conversetionWasSelected = new EventEmitter<IConversation>();
-  
+  searchInput: string = '';
 
-  constructor(private conversationService: ConversationServices, public dialog: MatDialog) {}
+  @Output() conversetionWasSelected = new EventEmitter<IConversation>();
+  @ViewChild('conversationSearchInput', { static: false })
+  convSearchInputRef!: ElementRef;
+
+  constructor(
+    private conversationService: ConversationServices,
+    public dialog: MatDialog
+  ) {}
   openDialog(): void {
     const dialogRef = this.dialog.open(UserselectionComponent, {
-      width:'450px',
-      height:'450px',
-    });  
-       dialogRef.afterClosed().subscribe(user => {
-         if(user) {
-           console.log({user})
-         }
-      });
+      width: '450px',
+      height: '450px',
+    });
+    dialogRef.afterClosed().subscribe((user) => {
+      if (user) {
+        console.log({ user });
+      }
+    });
   }
   ngOnInit(): void {
     this.conversationService.getAllConversations().subscribe((res) => {
-      this.conversationList = res;
+      this.initalconversationList = res;
+      this.conversationList = this.initalconversationList;
       // console.log(res);
     });
   }
-  onConversationSelected(conversetion:IConversation) {
+  onConversationSelected(conversetion: IConversation) {
     this.selectedConversetion = conversetion;
     this.conversetionWasSelected.emit(conversetion);
   }
-}
 
+  onConversationSearch(event: Event) {
+    let inpt = (<HTMLInputElement>event.target).value;
+    console.log(inpt);
+    this.searchResult = [];
+    for (const conversation of this.initalconversationList) {
+      let title: string = conversation.title.toLowerCase();
+      let searchInput: string = this.searchInput.toLowerCase();
+
+      if (title.includes(searchInput)) {
+        this.searchResult.push(conversation);
+      }
+    }
+    this.conversationList = this.searchResult;
+  }
+}

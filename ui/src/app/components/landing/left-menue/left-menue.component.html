@@ -5,20 +5,29 @@
       <i class="material-icons chat-icon" (click)="openDialog()">chat</i>
     </div>
     <div class="search-bar">
-      <i class="material-icons search-icon">search</i>
+      <i class="material-icons search-icon" 
+        >search</i
+      >
+
       <input
         type="search"
         class="searchInput"
         placeholder="Search or start a new chat"
+        #conversationSearchInput
+        [(ngModel)]="searchInput"
+        (input)="onConversationSearch($event)"
       />
     </div>
-    <div class="conversetion-container">
-      <app-conversation
-        *ngFor="let conversetion of conversationList"
-        [conversation]="conversetion"
-        [selectedConversation]="selectedConversetion"
-        (conversationSelected)="onConversationSelected(conversetion)"
-      ></app-conversation>
+    <div class="conversetions-container">
+      <div >
+        <app-conversation
+          *ngFor="let conversetion of conversationList"
+          [conversation]="conversetion"
+          [selectedConversation]="selectedConversetion"
+          (conversationSelected)="onConversationSelected(conversetion)"
+        ></app-conversation>
+      </div>
+      <ng-template #searchResult> </ng-template>
     </div>
   </div>
 </div>
