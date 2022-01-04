@@ -19,6 +19,7 @@ import { AngularmatrialModule } from './shared/angularmatrial/angularmatrial.mod
 import { phoneVerification } from './components/phoneverification/phoneverification.component'
 import { AppConfigService } from './service/config.service';
 import { AuthInterceptor } from './service/auth-interceptor';
+import { PasswordComponent } from './components/password/password.compnent';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AuthInterceptor } from './service/auth-interceptor';
     UserselectionComponent,
     IconmessageComponent,
     phoneVerification,
+    PasswordComponent
   ],
   imports: [
     BrowserModule,

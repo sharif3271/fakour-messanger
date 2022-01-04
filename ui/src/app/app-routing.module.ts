@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { LandinngComponent } from './components/landing/landing.component';
 import { RegisterComponent } from './components/register/register.component';
 import { phoneVerification } from './components/phoneverification/phoneverification.component';
+import { PasswordComponent } from './components/password/password.compnent';
 
 const routes: Routes = [
   {
@@ -21,6 +22,9 @@ const routes: Routes = [
   },
   {
     path: 'phoneverification', component: phoneVerification,
+  },
+  {
+    path:'password', component: PasswordComponent,
   }
 ];
 
