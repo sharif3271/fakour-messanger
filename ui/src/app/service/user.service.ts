@@ -29,4 +29,12 @@ export class UserService {
     setPassword(setPass: any): Observable<any> {
         return this.http.post(this.config.url + 'user/set-password', setPass);
     }
+
+    getAllUsers(): Observable<any> {
+        return this.http.get<any>(this.url + '/user/all', {
+            headers: {
+                'Authorization': (localStorage.getItem('token') || '')
+            }
+        });
+    }
 }

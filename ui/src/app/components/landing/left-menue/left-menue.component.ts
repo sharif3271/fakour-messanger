@@ -1,6 +1,9 @@
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 import { ConversationServices } from 'src/app/service/conversation.service';
 import { IConversation } from 'src/app/models/conversation.model';
+import { MatDialog } from '@angular/material/dialog';
+import { UserselectionComponent } from '../../userselection/userselection.component';
+
 @Component({
   selector: 'app-left-menue',
   templateUrl: './left-menue.component.html',
@@ -12,8 +15,15 @@ export class LeftMenueComponent implements OnInit {
   @Output() conversetionWasSelected = new EventEmitter<IConversation>();
   
 
-  constructor(private conversationService: ConversationServices) {
-    
+  constructor(private conversationService: ConversationServices, public dialog: MatDialog) {}
+  openDialog(): void {
+    const dialogRef = this.dialog.open(UserselectionComponent, {
+      width:'450px',
+      height:'450px',
+    });  
+       dialogRef.afterClosed().subscribe(result => {
+         
+      });
   }
   ngOnInit(): void {
     this.conversationService.getAllConversations().subscribe((res) => {
@@ -21,9 +31,9 @@ export class LeftMenueComponent implements OnInit {
       // console.log(res);
     });
   }
-
   onConversationSelected(conversetion:IConversation) {
     this.selectedConversetion = conversetion;
     this.conversetionWasSelected.emit(conversetion);
   }
 }
+

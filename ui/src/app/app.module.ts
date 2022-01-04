@@ -9,7 +9,6 @@ import { LoginComponent } from './components/login/login.component';
 import { LandinngComponent } from './components/landing/landing.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UserselectionComponent } from './components/userselection/userselection.component';
-import { IconmessageComponent } from './components/iconmessage/iconmessage.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LeftMenueComponent } from './components/landing/left-menue/left-menue.component';
 import { MessageAreaComponent } from './components/landing/message-area/message-area.component';
@@ -33,7 +32,6 @@ import { MassegeComponent } from './components/landing/message-area/massege/mass
     MessageAreaComponent,
     ConversationComponent,
     UserselectionComponent,
-    IconmessageComponent,
     phoneVerification,
     PasswordComponent,
     MassegeComponent,
