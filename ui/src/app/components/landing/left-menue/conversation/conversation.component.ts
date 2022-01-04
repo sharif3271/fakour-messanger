@@ -8,6 +8,7 @@ import { IConversation } from 'src/app/models/conversation.model';
 })
 export class ConversationComponent implements OnInit {
   @Input() conversation!: IConversation;
+  @Input() selectedConversation!: IConversation;
   @Output() conversationSelected = new EventEmitter<void>();
   constructor() {}
 
@@ -15,7 +16,6 @@ export class ConversationComponent implements OnInit {
 
   onSelected() {
     this.conversationSelected.emit();
-
   }
 
   calculateTime(date: number) {

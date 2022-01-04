@@ -1,4 +1,4 @@
-import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 import { ConversationServices } from 'src/app/service/conversation.service';
 import { IConversation } from 'src/app/models/conversation.model';
 @Component({
@@ -8,6 +8,7 @@ import { IConversation } from 'src/app/models/conversation.model';
 })
 export class LeftMenueComponent implements OnInit {
   conversationList: IConversation[] = [];
+  selectedConversetion!: IConversation;
   @Output() conversetionWasSelected = new EventEmitter<IConversation>();
   
 
@@ -21,8 +22,8 @@ export class LeftMenueComponent implements OnInit {
     });
   }
 
-  onConversationSelected(conversetion:IConversation){
-
+  onConversationSelected(conversetion:IConversation) {
+    this.selectedConversetion = conversetion;
     this.conversetionWasSelected.emit(conversetion);
   }
 }

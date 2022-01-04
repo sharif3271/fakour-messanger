@@ -1,4 +1,4 @@
-<div class="frame-continer" (click)="onSelected()">
+<div class="frame-continer" (click)="onSelected()" [ngClass]="{'is-selected': conversation?.title === selectedConversation?.title}">
   <div class="profile-pic">
     <img class="friend-profile-pic" src="../../../../assets/noPic.svg" />
   </div>

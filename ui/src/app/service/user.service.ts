@@ -18,11 +18,7 @@ export class UserService {
     constructor(private http: HttpClient, private config: AppConfigService) {}
 
     login(userCredentials: {phoneNumber: string; password: string}): Observable<{token: string}> {
-        return this.http.post<{token: string}>(this.config.url + 'user/login', userCredentials, {
-            headers: {
-                'Authorization': localStorage.getItem('token') || ''
-            }
-        });
+        return this.http.post<{token: string}>(this.config.url + 'user/login', userCredentials);
     }
 
     createUser(user:IUserCreateModel): Observable<any> {
