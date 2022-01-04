@@ -21,10 +21,10 @@ const routes: Routes = [
     path: 'register', component: RegisterComponent,
   },
   {
-    path: 'phoneverification', component: phoneVerification,
+    path:'password', component: PasswordComponent,
   },
   {
-    path:'password', component: PasswordComponent,
+    path: 'phone-verification', component: phoneVerification,
   }
 ];
 

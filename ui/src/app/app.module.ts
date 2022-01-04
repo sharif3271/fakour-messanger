@@ -2,7 +2,6 @@ import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { LandingCanActivate } from './gaurds/landing.gaurd';
-import { MatInputModule } from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -42,7 +41,6 @@ import { PasswordComponent } from './components/password/password.compnent';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     AngularmatrialModule,
-    MatInputModule,
   ],
   providers: [
     HttpClient,
