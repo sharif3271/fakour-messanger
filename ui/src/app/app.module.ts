@@ -17,6 +17,8 @@ import { MessageAreaComponent } from './components/landing/message-area/message-
 import { ConversationComponent } from './components/landing/left-menue/conversation/conversation.component';
 import { AngularmatrialModule } from './shared/angularmatrial/angularmatrial.module';
 import { phoneVerification } from './components/phoneverification/phoneverification.component';
+import { MassegeComponent } from './components/landing/message-area/massege/massege.component';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { phoneVerification } from './components/phoneverification/phoneverificat
     UserselectionComponent,
     IconmessageComponent,
     phoneVerification,
+    MassegeComponent
   ],
   imports: [
     BrowserModule,

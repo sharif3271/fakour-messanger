@@ -10,6 +10,7 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
     
   ]
 })
+// TODO: Add animation for open massage area
 export class LandinngComponent implements OnInit {
   selectedConversetion!: IConversation;
 

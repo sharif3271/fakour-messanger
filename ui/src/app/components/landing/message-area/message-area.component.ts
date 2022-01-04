@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IConversation } from 'src/app/models/conversation.model';
+import { IConversation, IMessage } from 'src/app/models/conversation.model';
 @Component({
   selector: 'app-message-area',
   templateUrl: './message-area.component.html',
@@ -7,6 +7,7 @@ import { IConversation } from 'src/app/models/conversation.model';
 })
 export class MessageAreaComponent implements OnInit {
   chatActive: boolean = true;
+  messages!: IMessage[] ;
   @Input() conversetion!: IConversation;
   constructor() {}
   ngOnInit(): void {}

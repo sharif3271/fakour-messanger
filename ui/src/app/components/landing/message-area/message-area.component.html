@@ -8,17 +8,9 @@
   </div>
   <div class="chat-area" *ngIf="chatActive; else startChat">
     <div class="chat-massage-area">
-      <div class="massage send-massage">
-        <div class="massage-container">
-          <span class="massage-content">Hi there</span>
-        </div>
-      </div>
-      <div class="massage receive-message">
-        <div class="massage-container">
-          <span class="massage-content">Hello!</span>
-        </div>
-      </div>
+      <app-massege></app-massege>
     </div>
+    
     <div class="send-massage-area">
       <mat-icon class="send-icon">send</mat-icon>
       <input type="text" class="massage-input" placeholder="Type a message" />

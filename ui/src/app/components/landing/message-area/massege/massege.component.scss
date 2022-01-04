@@ -1,0 +1,60 @@
+.massage-container {
+  height: 90%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  .massage {
+    display: flex;
+  }
+
+  span.massage-content {
+    padding-bottom: 1px;
+  }
+
+  .massage-content-container {
+    border-radius: 5px;
+    max-width: 80%;
+
+    padding: 0.7rem 0.5rem 0 0.5rem;
+  }
+
+  .send-massage {
+    justify-content: flex-end;
+
+    .massage-content-container {
+      background-color: #dcf8c6;
+      margin-right: 1rem;
+    }
+  }
+
+  .receive-message {
+    .massage-content-container {
+      background-color: #dddddd;
+      margin-left: 1rem;
+    }
+  }
+
+  .recive-massage {
+    text-align: left;
+  }
+
+  .time-status-container {
+    display: flex;
+    flex-direction: row;
+    z-index: 5;
+
+    .msg-stuats {
+      font-size: 1.1rem;
+      color: rgba(18, 151, 0, 0.712);
+      font-weight: 400;
+    }
+  }
+
+  .sending-time {
+    .time {
+      color: rgba(128, 128, 128, 0.623);
+    }
+  }
+}
