@@ -21,6 +21,9 @@ export class UserService {
 
     createUser(user:IUserCreateModel): Observable<any> {
       return this.http.post(this.config.url + 'user/create', user);
+    }
 
+    setPassword(setPass: any): Observable<any> {
+        return this.http.post(this.config.url + 'user/set-password', setPass);
     }
 }
