@@ -21,8 +21,10 @@ export class LeftMenueComponent implements OnInit {
       width:'450px',
       height:'450px',
     });  
-       dialogRef.afterClosed().subscribe(result => {
-         
+       dialogRef.afterClosed().subscribe(user => {
+         if(user) {
+           console.log({user})
+         }
       });
   }
   ngOnInit(): void {

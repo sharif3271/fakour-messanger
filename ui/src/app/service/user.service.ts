@@ -31,10 +31,6 @@ export class UserService {
     }
 
     getAllUsers(): Observable<any> {
-        return this.http.get<any>(this.url + '/user/all', {
-            headers: {
-                'Authorization': (localStorage.getItem('token') || '')
-            }
-        });
+        return this.http.get<any>(this.config.url + 'user/all');
     }
 }

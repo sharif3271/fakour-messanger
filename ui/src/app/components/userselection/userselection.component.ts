@@ -10,7 +10,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 })
 
 export class UserselectionComponent  implements OnInit{
-    select_user="";
+    select_user: any;
     users: IUserAccount[] = [];
     constructor(private userService: UserService,
         public dialogRef: MatDialogRef<UserselectionComponent>,
@@ -23,13 +23,11 @@ export class UserselectionComponent  implements OnInit{
             this.users=res;
           })
     }
-    get_iduser(ID_User:string){
-        this.select_user=ID_User;
+    get_iduser(user: any){
+        this.select_user = user;
     }
     closeDialog() { 
-      
-       console.log(this.select_user);
-       this.dialogRef.close({});
+       this.dialogRef.close(this.select_user);
     }
 }
 

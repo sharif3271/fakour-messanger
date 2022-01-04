@@ -5,7 +5,7 @@
     </button>
 </div>
 <div class="showalluser">
-    <div *ngFor='let user of users; let i=index;' class="all_user" (click)="get_iduser(user.id)">
+    <div *ngFor='let user of users; let i=index;' class="all_user" (click)="get_iduser(user)">
         <img class="profile-pic" src="../../../assets/noPic.svg">
         <div class="phone-num">{{user.phoneNumber}} </div>
     </div> 
