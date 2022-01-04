@@ -1,0 +1,69 @@
+.frame-continer {
+  display: flex;
+  align-items: center;
+  height: 9vh;
+  flex-direction: row;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f5f5f5d3;
+  }
+
+  .friend-profile-pic {
+    width: 3rem;
+    margin-left: 1rem;
+  }
+
+  .conversetion-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .phone-and-time {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      .time {
+        margin-right: 1rem;
+        font-size: 0.8rem;
+        color: gray;
+      }
+    }
+
+    .title {
+      margin-left: 1rem;
+    }
+
+    .last-massage {
+      display: flex;
+      position: relative;
+      .msg-stuats {
+        font-size: 1.1rem;
+        color: rgba(18, 151, 0, 0.712);
+        font-weight: 400;
+        position: absolute;
+        left: 1px;
+        top: 1px;
+      }
+
+      .msg-stuats-two {
+        left: 4px;
+      }
+
+      .massage-content {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-left: 1.3rem;
+        color: grey;
+        width: 70%;
+      }
+    }
+  }
+}
+
+hr {
+  border: 1px solid rgba(128, 128, 128, 0.288);
+  width: 80%;
+}

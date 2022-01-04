@@ -1,0 +1,25 @@
+<div class="frame-continer" (click)="onSelected()">
+  <div class="profile-pic">
+    <img class="friend-profile-pic" src="../../../../assets/noPic.svg" />
+  </div>
+  <div class="conversetion-container">
+    <div class="phone-and-time">
+      <span class="title">{{ conversation.title }}</span>
+      <div class="time">
+        {{ calculateTime(conversation.lastMessage.createDate) }}
+      </div>
+    </div>
+    <div class="last-massage">
+      <mat-icon class="msg-stuats msg-stuats-one">check</mat-icon>
+      <mat-icon
+        *ngIf="conversation.lastMessage.seen"
+        class="msg-stuats msg-stuats-two"
+        >check</mat-icon
+      >
+      <div class="massage-content">
+        {{ conversation.lastMessage.contentText }}
+      </div>
+    </div>
+  </div>
+</div>
+<hr />

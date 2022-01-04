@@ -3,10 +3,11 @@
   background-color: #ffffff;
   display: inline-flex;
   height: 100%;
-  width: 25vw;
+  width: 30vw;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
-  border-right: 1px solid rgba(169, 169, 169, 0.548);;
+  border-right: 1px solid rgba(169, 169, 169, 0.548);
+
 
   .contianer {
     width: 100%;
@@ -28,12 +29,13 @@
       align-items: center;
       height: 10%;
       background-color: #ededed;
-     
+
       border-top-left-radius: 10px;
     }
 
     .search-bar {
       height: 8%;
+      position: relative;
       background-color: #f6f6f6;
       justify-content: center;
     }
@@ -47,6 +49,8 @@
     .profile-pic {
       width: 3rem;
       margin-left: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
 
     .searchInput {
@@ -62,12 +66,39 @@
         outline: none;
 
       }
+
     }
 
     .search-icon {
       color: rgb(110, 110, 110);
       position: absolute;
-      left: 8%;
+      left: 10%;
+    }
+
+    .conversetion-container {
+      overflow-y: auto;
+
     }
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

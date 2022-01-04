@@ -1,13 +1,23 @@
 <div class="left-menue">
-    <div class="contianer">
-      <div class="profile-bar">
-        <img class="profile-pic" src="../../../assets/noPic.svg">
-        <i class="material-icons chat-icon">chat</i>
-      </div>
-      <div class="search-bar">
-        <i class="material-icons search-icon">search</i>
-        <input type="search" class="searchInput" placeholder="Search or start a new chat" />
-      </div>
-      <app-friend></app-friend>
+  <div class="contianer">
+    <div class="profile-bar">
+      <img class="profile-pic" src="../../../assets/noPic.svg" />
+      <i class="material-icons chat-icon">chat</i>
+    </div>
+    <div class="search-bar">
+      <i class="material-icons search-icon">search</i>
+      <input
+        type="search"
+        class="searchInput"
+        placeholder="Search or start a new chat"
+      />
+    </div>
+    <div class="conversetion-container">
+      <app-conversation
+        *ngFor="let conversetion of conversationList"
+        [conversation]="conversetion"
+        (conversationSelected)="onConversationSelected(conversetion)"
+      ></app-conversation>
     </div>
   </div>
+</div>

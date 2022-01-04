@@ -1,29 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import {ConversationServices} from '../../service/conversation.service';
 import { IConversation } from 'src/app/models/conversation.model';
-
-
-const materialModules = [MatIconModule];
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 @Component({
-    selector: 'app-msg-landing',
-    templateUrl: './landing.component.html',
-    styleUrls: ['./landing.component.scss'],
-  })
-
-export class LandinngComponent implements OnInit {
-
-  conversationList: IConversation[] = [];
-
-  constructor(private conversationService: ConversationServices) {
+  selector: 'app-msg-landing',
+  templateUrl: './landing.component.html',
+  styleUrls: ['./landing.component.scss'],
+  animations:[
     
-  }
-  ngOnInit(): void {
-    this.conversationService.getAllConversations().subscribe(res => {
-      this.conversationList = res;
-      console.log(res);
-    });
-  }
-  getAllUser() {}
+  ]
+})
+// TODO: Add animation for open massage area
+export class LandinngComponent implements OnInit {
+  selectedConversetion!: IConversation;
+
+  constructor() {}
+  ngOnInit(): void {}
+
+
+  
 }

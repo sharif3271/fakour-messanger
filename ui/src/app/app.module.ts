@@ -13,12 +13,15 @@ import { IconmessageComponent } from './components/iconmessage/iconmessage.compo
 import { ReactiveFormsModule } from '@angular/forms';
 import { LeftMenueComponent } from './components/landing/left-menue/left-menue.component';
 import { MessageAreaComponent } from './components/landing/message-area/message-area.component';
-import { FriendComponent } from './components/landing/left-menue/friend/friend.component';
 import { AngularmatrialModule } from './shared/angularmatrial/angularmatrial.module'
 import { phoneVerification } from './components/phoneverification/phoneverification.component'
 import { AppConfigService } from './service/config.service';
 import { AuthInterceptor } from './service/auth-interceptor';
 import { PasswordComponent } from './components/password/password.compnent';
+import { ConversationComponent } from './components/landing/left-menue/conversation/conversation.component';
+import { MassegeComponent } from './components/landing/message-area/massege/massege.component';
+
+
 
 @NgModule({
   declarations: [
@@ -28,11 +31,12 @@ import { PasswordComponent } from './components/password/password.compnent';
     RegisterComponent,
     LeftMenueComponent,
     MessageAreaComponent,
-    FriendComponent,
+    ConversationComponent,
     UserselectionComponent,
     IconmessageComponent,
     phoneVerification,
-    PasswordComponent
+    PasswordComponent,
+    MassegeComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,4 +64,4 @@ import { PasswordComponent } from './components/password/password.compnent';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
