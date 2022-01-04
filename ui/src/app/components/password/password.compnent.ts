@@ -5,8 +5,8 @@ import { Router } from '@angular/router';
 
 @Component({
     selector:'app-msg-password',
-    templateUrl:'./password.component.html',
-    styleUrls:['./password.component.scss']
+    templateUrl:'./password.compnent.html',
+    styleUrls:['./password.compnent.scss']
 })
 export class PasswordComponent implements OnInit{
   submitted = false;
