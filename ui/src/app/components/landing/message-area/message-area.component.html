@@ -22,6 +22,7 @@
         type="text"
         class="massage-input"
         placeholder="Type a message"
+        (keyup.enter)="senMassege()"
         [(ngModel)]="messageText"
       />
       <mat-icon class="send-icon" (click)="senMassege()">send</mat-icon>
@@ -32,7 +33,7 @@
 <ng-template #conversationNotSelected>
   <div class="message-area">
     <div class="start-chat-area">
-      <img src="../../../../assets/start-chat.svg" alt="" />
+      <img src="../../../../assets/start-chat.svg" alt="Start Chat" />
       <div class="icon-text">
         <img
           class="chat-icon .hvr-float"

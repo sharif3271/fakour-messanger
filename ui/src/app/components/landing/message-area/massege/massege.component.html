@@ -4,9 +4,10 @@
       <span class="massage-content">{{ message.contentText }}</span>
       <div class="time-status-container">
         <div class="status">
-          <mat-icon class="msg-stuats msg-stuats-one">check</mat-icon>
+          <mat-icon class="msg-stuats msg-stuats-send">check</mat-icon>
+          <mat-icon *ngIf="message.seen" class="msg-stuats msg-stuats-recive">check</mat-icon>
         </div>
-        <div class="sending-time"><span class="time">17:40</span></div>
+        <div class="sending-time"><span class="time">{{convertedDate}}</span></div>
       </div>
     </div>
   </div>
@@ -14,7 +15,7 @@
     <div class="massage receive-message">
       <div class="massage-content-container">
         <span class="massage-content">{{ message.contentText }}</span>
-        <div class="sending-time"><span class="time">17:40</span></div>
+        <div class="sending-time"><span class="time">{{convertedDate}}</span></div>
       </div>
     </div>
   </ng-template>

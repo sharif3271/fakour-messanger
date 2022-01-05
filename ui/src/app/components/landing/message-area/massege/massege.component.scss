@@ -45,10 +45,18 @@
     flex-direction: row;
     z-index: 5;
 
-    .msg-stuats {
-      font-size: 1.1rem;
-      color: rgba(18, 151, 0, 0.712);
-      font-weight: 400;
+    .status {
+      position: relative;
+      .msg-stuats {
+        font-size: 1.1rem;
+        color: rgba(18, 151, 0, 0.712);
+
+        font-weight: 400;
+      }
+      .msg-stuats-recive {
+        position: absolute;
+        left: 5px;
+      }
     }
   }
 

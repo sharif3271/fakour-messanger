@@ -39,7 +39,7 @@ export class MessageAreaComponent implements OnInit {
         seen: false,
       };
       this.chatMessages.push(newMassege);
-      // this.messageText = '';
+      this.messageText = '';
     }
     // TODO: Add animation to scroll to last message
     setTimeout(() => {
@@ -47,4 +47,5 @@ export class MessageAreaComponent implements OnInit {
         this.chatMessageArea.nativeElement.scrollHeight;
     }, 100);
   }
+
 }
