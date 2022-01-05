@@ -9,7 +9,9 @@
     </div>
   </div>
   <div class="chat-area">
-    <div class="chat-massage-area">
+    
+    <div class="chat-massage-area" #chatMessageArea>
+      <div class="empty-space"></div>
       <app-massege
       *ngFor="let msg of chatMessages"
       [message]="msg"></app-massege>

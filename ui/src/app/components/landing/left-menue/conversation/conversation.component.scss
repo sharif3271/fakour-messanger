@@ -1,7 +1,7 @@
 .frame-continer {
   display: flex;
   align-items: center;
-  height: 9vh;
+  height: 11vh;
   flex-direction: row;
   cursor: pointer;
   &.is-selected {
@@ -69,4 +69,5 @@
 hr {
   border: 1px solid rgba(128, 128, 128, 0.288);
   width: 80%;
+  margin: 0 10%;
 }

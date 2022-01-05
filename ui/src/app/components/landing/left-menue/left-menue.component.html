@@ -2,12 +2,12 @@
   <div class="contianer">
     <div class="profile-bar">
       <div class="user-info">
-      <img class="profile-pic" src="../../../assets/noPic.svg" />
-      <div class="name-number">
-        <span class="user-name">{{userAccountInfo.name}}</span>
-        <span class="phone-number">{{userAccountInfo.phoneNumber}}</span>
+        <img class="profile-pic" src="../../../assets/noPic.svg" />
+        <div class="name-number">
+          <span class="user-name">{{ userAccountInfo.name }}</span>
+          <span class="phone-number">{{ userAccountInfo.phoneNumber }}</span>
+        </div>
       </div>
-    </div>
       <i class="material-icons chat-icon" (click)="openDialog()">chat</i>
     </div>
     <div class="search-bar">
@@ -21,14 +21,12 @@
       />
     </div>
     <div class="conversetions-container">
-      <div>
-        <app-conversation
-          *ngFor="let conversetion of conversationList"
-          [conversation]="conversetion"
-          [selectedConversation]="selectedConversetion"
-          (conversationSelected)="onConversationSelected(conversetion)"
-        ></app-conversation>
-      </div>
+      <app-conversation
+        *ngFor="let conversetion of conversationList"
+        [conversation]="conversetion"
+        [selectedConversation]="selectedConversetion"
+        (conversationSelected)="onConversationSelected(conversetion)"
+      ></app-conversation>
     </div>
   </div>
 </div>

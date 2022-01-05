@@ -8,7 +8,6 @@
   border-top-right-radius: 10px;
 
   .message-bar {
-    z-index: 2;
     width: 100%;
     height: 10%;
     background-color: #ededed;
@@ -30,12 +29,14 @@
   }
 
   .chat-area {
+    display: flex;
     background-image: url("../../../../assets/masseg-area-background.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #cccccc;
     height: 90%;
+   
   }
 
   .start-chat-area {
@@ -66,24 +67,27 @@
 
     justify-content: center;
 
-
     .chat-icon {
       width: 8vw;
       cursor: pointer;
     }
 
     .chat-massage-area {
-      z-index: 1;
       height: 90%;
       width: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      overflow: scroll;
+      overflow: auto;
+
+       
+    .empty-space{
+      height: 100px;
+      flex: 1;
+    }
     }
 
     .send-massage-area {
-      z-index: 2;
+      margin-top: 1px;
       display: flex;
       background-color: #ededed;
       justify-content: center;
@@ -141,4 +145,26 @@
 .hvr-float:active {
   -webkit-transform: translateY(-8px);
   transform: translateY(-8px);
+}
+//////////////////////
+
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
