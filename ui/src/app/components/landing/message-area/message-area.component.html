@@ -10,23 +10,33 @@
   </div>
   <div class="chat-area">
     <div class="chat-massage-area">
-      <app-massege></app-massege>
+      <app-massege
+      *ngFor="let msg of chatMessages"
+      [message]="msg"></app-massege>
     </div>
 
     <div class="send-massage-area">
-      <input type="text" class="massage-input" placeholder="Type a message" />
-      <mat-icon class="send-icon">send</mat-icon>
+      <input
+        type="text"
+        class="massage-input"
+        placeholder="Type a message"
+        [(ngModel)]="messageText"
+      />
+      <mat-icon class="send-icon" (click)="senMassege()">send</mat-icon>
     </div>
   </div>
 </div>
 
 <ng-template #conversationNotSelected>
-  <div class="message-area ">
+  <div class="message-area">
     <div class="start-chat-area">
-      
-      <img src="../../../../assets/start-chat.svg" alt="">
+      <img src="../../../../assets/start-chat.svg" alt="" />
       <div class="icon-text">
-        <img class="chat-icon .hvr-float " src="../../../../assets/chat.svg" alt="chat" />
+        <img
+          class="chat-icon .hvr-float"
+          src="../../../../assets/chat.svg"
+          alt="chat"
+        />
         <h3 class="start-chat">Start a conversation ...</h3>
       </div>
     </div>

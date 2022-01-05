@@ -28,44 +28,41 @@
     }
   }
 
-
-  .chat-area{
+  .chat-area {
     background-image: url("../../../../assets/masseg-area-background.jpg");
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: #cccccc;
   }
 
   .start-chat-area {
     background-color: #ededed;
 
-    .icon-text{
+    .icon-text {
       display: flex;
       justify-content: center;
       align-items: center;
 
-      .start-chat{
+      .start-chat {
         margin-left: 1rem;
       }
 
-      .chat-icon{
+      .chat-icon {
         height: 5rem;
-        
       }
-        }
+    }
   }
 
-  .chat-area,.start-chat-area {
-    align-items: center;  
-  
+  .chat-area,
+  .start-chat-area {
+    align-items: center;
+
     border-bottom-right-radius: 10px;
     display: flex;
     flex-direction: column;
     height: 100%;
     justify-content: center;
-
-   
 
     .chat-icon {
       width: 8vw;
@@ -78,35 +75,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-
-      .massage {
-        display: flex;
-      }
-
-      .send-massage {
-        justify-content: flex-end;
-
-        .massage-container {
-          background-color: #dcf8c6;
-          padding: 1rem 0.5rem;
-          margin-right: 1rem;
-          border-radius: 5px;
-          max-width: 80%;
-        }
-      }
-      .receive-message {
-        .massage-container {
-          background-color: #dddddd;
-          padding: 1rem 0.5rem;
-          margin-left: 1rem;
-          border-radius: 5px;
-          max-width: 80%;
-        }
-      }
-
-      .recive-massage {
-        text-align: left;
-      }
+      
     }
 
     .send-massage-area {
@@ -148,7 +117,6 @@
   }
 }
 
-
 // Don't work in angular but work in pure html and css file!
 .hvr-float {
   display: inline-block;
@@ -163,7 +131,9 @@
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-.hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+.hvr-float:hover,
+.hvr-float:focus,
+.hvr-float:active {
   -webkit-transform: translateY(-8px);
   transform: translateY(-8px);
 }
