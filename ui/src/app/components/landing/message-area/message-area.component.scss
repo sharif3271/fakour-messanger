@@ -8,6 +8,7 @@
   border-top-right-radius: 10px;
 
   .message-bar {
+    z-index: 2;
     width: 100%;
     height: 10%;
     background-color: #ededed;
@@ -34,11 +35,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #cccccc;
+    height: 90%;
   }
 
   .start-chat-area {
     background-color: #ededed;
-
+    height: 100%;
     .icon-text {
       display: flex;
       justify-content: center;
@@ -61,8 +63,9 @@
     border-bottom-right-radius: 10px;
     display: flex;
     flex-direction: column;
-    height: 100%;
+
     justify-content: center;
+
 
     .chat-icon {
       width: 8vw;
@@ -70,22 +73,24 @@
     }
 
     .chat-massage-area {
+      z-index: 1;
       height: 90%;
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      
+      overflow: scroll;
     }
 
     .send-massage-area {
+      z-index: 2;
       display: flex;
       background-color: #ededed;
       justify-content: center;
       align-items: center;
-      margin-top: 10px;
       width: 100%;
       height: 10%;
+
       border-bottom-right-radius: 10px;
 
       .send-icon {

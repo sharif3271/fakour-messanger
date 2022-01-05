@@ -38,7 +38,7 @@ export class MessageAreaComponent implements OnInit {
         seen: false,
       };
       this.chatMessages.push(newMassege);
-      this.messageText = '';
+      // this.messageText = '';
     }
   }
 }
