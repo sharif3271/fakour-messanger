@@ -7,7 +7,7 @@ import { IConversation, IMessage } from 'src/app/models/conversation.model';
 })
 
 export class MessageAreaComponent implements OnInit {
-  chatActive: boolean = true;
+  
   messages!: IMessage[] ;
   @Input() conversetion!: IConversation;
   constructor() {}

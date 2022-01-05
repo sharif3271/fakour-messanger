@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IConversation } from 'src/app/models/conversation.model';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import { IUserAccount } from 'src/app/models/user.model';
+
 
 @Component({
   selector: 'app-msg-landing',
@@ -14,9 +16,10 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
 export class LandinngComponent implements OnInit {
   selectedConversetion!: IConversation;
 
-  constructor() {}
-  ngOnInit(): void {}
-
-
+  constructor() {
+  }
+  ngOnInit(): void {
+    
+  }
   
 }

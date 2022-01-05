@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { IConversation } from 'src/app/models/conversation.model';
+import { IUserAccount } from 'src/app/models/user.model';
+import { AccountService } from 'src/app/service/account.service';
 
 @Component({
   selector: 'app-conversation',
@@ -10,9 +12,17 @@ export class ConversationComponent implements OnInit {
   @Input() conversation!: IConversation;
   @Input() selectedConversation!: IConversation;
   @Output() conversationSelected = new EventEmitter<void>();
-  constructor() {}
+  userAccountInfo!: IUserAccount;
+  isSenderOflastMsgMe!: boolean;
 
-  ngOnInit(): void {}
+  constructor(private accountService: AccountService) {}
+
+  ngOnInit(): void {
+    this.userAccountInfo = this.accountService.accountInfo;
+    this.isSenderOflastMsgMe =
+      this.userAccountInfo.phoneNumber ===
+      this.conversation.lastMessage.senderPhoneNumber;
+  }
 
   onSelected() {
     this.conversationSelected.emit();
@@ -37,7 +47,6 @@ export class ConversationComponent implements OnInit {
       let year = conversationDate.getFullYear().toString();
       let month = conversationDate.getMonth().toString();
       let utcDate = conversationDate.getUTCDate().toString();
-
       time = month + '/' + utcDate + '/' + year;
     }
 

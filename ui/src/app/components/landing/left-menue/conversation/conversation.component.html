@@ -1,4 +1,10 @@
-<div class="frame-continer" (click)="onSelected()" [ngClass]="{'is-selected': conversation?.title === selectedConversation?.title}">
+<div
+  class="frame-continer"
+  (click)="onSelected()"
+  [ngClass]="{
+    'is-selected': conversation?.title === selectedConversation?.title
+  }"
+>
   <div class="profile-pic">
     <img class="friend-profile-pic" src="../../../../assets/noPic.svg" />
   </div>
@@ -10,12 +16,14 @@
       </div>
     </div>
     <div class="last-massage">
-      <mat-icon class="msg-stuats msg-stuats-one">check</mat-icon>
-      <mat-icon
-        *ngIf="conversation.lastMessage.seen"
-        class="msg-stuats msg-stuats-two"
-        >check</mat-icon
-      >
+      <div *ngIf="isSenderOflastMsgMe" class="massge-seen-status">
+        <mat-icon class="msg-stuats msg-stuats-send">check</mat-icon>
+        <mat-icon
+          *ngIf="conversation.lastMessage.seen"
+          class="msg-stuats msg-stuats-seen"
+          >check</mat-icon
+        >
+      </div>
       <div class="massage-content">
         {{ conversation.lastMessage.contentText }}
       </div>
