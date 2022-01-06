@@ -41,6 +41,7 @@
 
   .start-chat-area {
     background-color: #ededed;
+    border-top-right-radius: 10px;
     height: 100%;
     .icon-text {
       display: flex;
@@ -62,7 +63,7 @@
     align-items: center;
 
     border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
+ 
     display: flex;
     flex-direction: column;
 
