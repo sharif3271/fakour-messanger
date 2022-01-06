@@ -36,7 +36,6 @@
     background-size: cover;
     background-color: #cccccc;
     height: 90%;
-   
   }
 
   .start-chat-area {
@@ -63,7 +62,7 @@
     align-items: center;
 
     border-bottom-right-radius: 10px;
- 
+
     display: flex;
     flex-direction: column;
 
@@ -80,12 +79,25 @@
       display: flex;
       flex-direction: column;
       overflow: auto;
+      .day-wraper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-bottom: 2rem;
+        .day {
+          background-color: #cccccca4;
+          padding: 5px;
+          border-radius: 4px;
+          color: rgb(43, 43, 43);
+          position: fixed;
+        }
+      }
 
-       
-    .empty-space{
-      height: 100px;
-      flex: 1;
-    }
+      .empty-space {
+        height: 100px;
+        flex: 1;
+      }
     }
 
     .send-message-area {
@@ -149,7 +161,6 @@
   transform: translateY(-8px);
 }
 //////////////////////
-
 
 ::-webkit-scrollbar {
   width: 8px;

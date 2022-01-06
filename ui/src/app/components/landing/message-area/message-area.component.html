@@ -12,6 +12,8 @@
     
     <div class="chat-message-area" #chatMessageArea>
       <div class="empty-space"></div>
+      <div class="day-wraper"><div class="day">Today</div></div>
+      
       <app-message
       *ngFor="let msg of chatMessages"
       [message]="msg"></app-message>

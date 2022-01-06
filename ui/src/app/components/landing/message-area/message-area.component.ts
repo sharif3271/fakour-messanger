@@ -1,7 +1,12 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { IConversation, IMessage } from 'src/app/models/conversation.model';
+import {
+  IConversation,
+  IMessage,
+  IGroupedByTimeChatMessages,
+} from 'src/app/models/conversation.model';
 import { AccountService } from 'src/app/service/account.service';
 import { ChatService } from 'src/app/service/chat.service';
+import { DateService } from 'src/app/service/date.service';
 @Component({
   selector: 'app-message-area',
   templateUrl: './message-area.component.html',
@@ -10,15 +15,19 @@ import { ChatService } from 'src/app/service/chat.service';
 export class MessageAreaComponent implements OnInit {
   messageText!: string;
   chatMessages!: IMessage[];
+  // Grouped by time chat messages
+  groupedChatMessages: { [key: string]: IMessage[] } = {};
   @Input() conversetion!: IConversation;
   @ViewChild('chatMessageArea', { static: false }) chatMessageArea!: ElementRef;
 
   constructor(
     private chatService: ChatService,
-    private accountService: AccountService
+    private accountService: AccountService,
+    private dateService: DateService
   ) {}
   ngOnInit(): void {
     this.chatMessages = this.chatService.chatData;
+    this.groupChatMessage();
   }
 
   // TODO: Add animation to send message
@@ -39,6 +48,7 @@ export class MessageAreaComponent implements OnInit {
         seen: false,
       };
       this.chatMessages.push(newMessage);
+      this.addToGroupMessage(newMessage);
       this.messageText = '';
     }
     // TODO: Add animation to scroll to last message
@@ -48,4 +58,19 @@ export class MessageAreaComponent implements OnInit {
     }, 100);
   }
 
+  groupChatMessage() {
+    for (let msg of this.chatMessages) {
+      this.addToGroupMessage(msg);
+    }
+    console.log(this.groupedChatMessages);
+  }
+
+  addToGroupMessage(newMsg: IMessage) {
+    let msgDay = this.dateService.calculateDay(newMsg.createDate);
+    if (msgDay in this.groupedChatMessages) {
+      this.groupedChatMessages[msgDay].push(newMsg);
+    } else {
+      this.groupedChatMessages[msgDay] = [newMsg];
+    }
+  }
 }
