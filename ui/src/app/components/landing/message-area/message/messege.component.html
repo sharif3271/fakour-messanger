@@ -1,7 +1,7 @@
-<div class="massage-container">
-  <div *ngIf="amISender; else recive" class="massage send-massage">
-    <div class="massage-content-container">
-      <span class="massage-content">{{ message.contentText }}</span>
+<div class="message-container">
+  <div *ngIf="amISender; else recive" class="message send-message">
+    <div class="message-content-container">
+      <span class="message-content">{{ message.contentText }}</span>
       <div class="time-status-container">
         <div class="status">
           <mat-icon class="msg-stuats msg-stuats-send">check</mat-icon>
@@ -12,9 +12,9 @@
     </div>
   </div>
   <ng-template #recive>
-    <div class="massage receive-message">
-      <div class="massage-content-container">
-        <span class="massage-content">{{ message.contentText }}</span>
+    <div class="message receive-message">
+      <div class="message-content-container">
+        <span class="message-content">{{ message.contentText }}</span>
         <div class="sending-time"><span class="time">{{convertedDate}}</span></div>
       </div>
     </div>

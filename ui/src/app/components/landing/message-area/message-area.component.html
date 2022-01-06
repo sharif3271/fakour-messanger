@@ -10,22 +10,22 @@
   </div>
   <div class="chat-area">
     
-    <div class="chat-massage-area" #chatMessageArea>
+    <div class="chat-message-area" #chatMessageArea>
       <div class="empty-space"></div>
-      <app-massege
+      <app-message
       *ngFor="let msg of chatMessages"
-      [message]="msg"></app-massege>
+      [message]="msg"></app-message>
     </div>
 
-    <div class="send-massage-area">
+    <div class="send-message-area">
       <input
         type="text"
-        class="massage-input"
+        class="message-input"
         placeholder="Type a message"
-        (keyup.enter)="senMassege()"
+        (keyup.enter)="sendMessage()"
         [(ngModel)]="messageText"
       />
-      <mat-icon class="send-icon" (click)="senMassege()">send</mat-icon>
+      <mat-icon class="send-icon" (click)="sendMessage()">send</mat-icon>
     </div>
   </div>
 </div>

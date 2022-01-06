@@ -21,8 +21,8 @@ export class MessageAreaComponent implements OnInit {
     this.chatMessages = this.chatService.chatData;
   }
 
-  // TODO: Add animation to send massege
-  senMassege() {
+  // TODO: Add animation to send message
+  sendMessage() {
     if (this.messageText) {
       const reciverPhoneNumber: string =
         this.accountService.accountInfo.phoneNumber ===
@@ -31,14 +31,14 @@ export class MessageAreaComponent implements OnInit {
           : this.conversetion.lastMessage.reciverPhoneNumber;
 
       const now = new Date();
-      const newMassege: IMessage = {
+      const newMessage: IMessage = {
         contentText: this.messageText,
         createDate: now.getTime(),
         reciverPhoneNumber: reciverPhoneNumber,
         senderPhoneNumber: this.accountService.accountInfo.phoneNumber,
         seen: false,
       };
-      this.chatMessages.push(newMassege);
+      this.chatMessages.push(newMessage);
       this.messageText = '';
     }
     // TODO: Add animation to scroll to last message

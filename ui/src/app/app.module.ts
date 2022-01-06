@@ -18,7 +18,7 @@ import { AppConfigService } from './service/config.service';
 import { AuthInterceptor } from './service/auth-interceptor';
 import { PasswordComponent } from './components/password/password.compnent';
 import { ConversationComponent } from './components/landing/left-menue/conversation/conversation.component';
-import { MassegeComponent } from './components/landing/message-area/massege/massege.component';
+import { MessageComponent } from './components/landing/message-area/message/messege.component';
 import { FormsModule } from '@angular/forms';
 
 
@@ -33,7 +33,7 @@ import { FormsModule } from '@angular/forms';
     ConversationComponent,
     UserselectionComponent,
     phoneVerification,
-    MassegeComponent,
+    MessageComponent,
     PasswordComponent
   ],
   imports: [

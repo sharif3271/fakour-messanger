@@ -15,7 +15,7 @@
         {{ calculateDate(conversation.lastMessage.createDate) }}
       </div>
     </div>
-    <div class="last-massage">
+    <div class="last-message">
       <div *ngIf="isSenderOflastMsgMe" class="massge-seen-status">
         <mat-icon class="msg-stuats msg-stuats-send">check</mat-icon>
         <mat-icon
@@ -24,7 +24,7 @@
           >check</mat-icon
         >
       </div>
-      <div class="massage-content">
+      <div class="message-content">
         {{ conversation.lastMessage.contentText }}
       </div>
     </div>

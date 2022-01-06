@@ -5,11 +5,11 @@ import { AccountService } from 'src/app/service/account.service';
 import { DateService } from 'src/app/service/date.service';
 
 @Component({
-  selector: 'app-massege',
-  templateUrl: './massege.component.html',
-  styleUrls: ['./massege.component.scss'],
+  selector: 'app-message',
+  templateUrl: './messege.component.html',
+  styleUrls: ['./messege.component.scss'],
 })
-export class MassegeComponent implements OnInit {
+export class MessageComponent implements OnInit {
   @Input() message!: IMessage;
   amISender!: boolean;
   userAccountInfo!: IUserAccount;

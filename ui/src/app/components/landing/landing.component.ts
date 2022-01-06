@@ -12,7 +12,7 @@ import { IUserAccount } from 'src/app/models/user.model';
     
   ]
 })
-// TODO: Add animation for open massage area
+// TODO: Add animation for open message area
 export class LandinngComponent implements OnInit {
   selectedConversetion!: IConversation;
 

@@ -30,7 +30,7 @@ export class ChatService {
     },
   ];
 
-  sendMassege(massage:IMessage){
-    this.chatData.push(massage);
+  sendMessage(message:IMessage){
+    this.chatData.push(message);
   }
 }
