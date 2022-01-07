@@ -33,7 +33,7 @@ export class ConversationComponent implements OnInit {
   }
 
   calculateDate(date: number) {
-    let convertedDate = this.dateService.calculateTime(date)
+    let convertedDate = this.dateService.calculateDate(date)
     return convertedDate; 
   }
 

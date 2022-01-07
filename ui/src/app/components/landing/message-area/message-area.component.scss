@@ -84,13 +84,13 @@
         display: flex;
         justify-content: center;
         align-content: center;
-        margin-bottom: 2rem;
+        margin: 1rem 0;
         .day {
           background-color: #cccccca4;
-          padding: 5px;
+          padding: 1px 5px;
           border-radius: 4px;
           color: rgb(43, 43, 43);
-          position: fixed;
+          // position: fixed;
         }
       }
 

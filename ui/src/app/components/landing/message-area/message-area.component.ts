@@ -1,12 +1,12 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import {
   IConversation,
-  IMessage,
-  IGroupedByTimeChatMessages,
+  IMessage
 } from 'src/app/models/conversation.model';
 import { AccountService } from 'src/app/service/account.service';
 import { ChatService } from 'src/app/service/chat.service';
 import { DateService } from 'src/app/service/date.service';
+// TODO: Grouped messages date fix on top
 @Component({
   selector: 'app-message-area',
   templateUrl: './message-area.component.html',
@@ -52,6 +52,7 @@ export class MessageAreaComponent implements OnInit {
       this.messageText = '';
     }
     // TODO: Add animation to scroll to last message
+    // FIXME: Btter way for scrolling on last message (chatMessages length ) 
     setTimeout(() => {
       this.chatMessageArea.nativeElement.scrollTop =
         this.chatMessageArea.nativeElement.scrollHeight;

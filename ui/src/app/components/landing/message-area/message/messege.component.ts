@@ -27,7 +27,7 @@ export class MessageComponent implements OnInit {
       this.amISender = false;
     }
 
-    this.convertedDate = this.dateService.calculateTime(this.message.createDate);
+    this.convertedDate = this.dateService.get_Hour_Min(this.message.createDate);
   }
 
  
