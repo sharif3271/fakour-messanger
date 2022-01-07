@@ -19,8 +19,7 @@ import { AuthInterceptor } from './service/auth-interceptor';
 import { PasswordComponent } from './components/password/password.compnent';
 import { ConversationComponent } from './components/landing/left-menue/conversation/conversation.component';
 import { MassegeComponent } from './components/landing/message-area/massege/massege.component';
-
-
+import { ScrollHeightChangeDirective } from './directives/scrollHeightChange.directive';
 
 @NgModule({
   declarations: [
@@ -35,6 +34,7 @@ import { MassegeComponent } from './components/landing/message-area/massege/mass
     phoneVerification,
     PasswordComponent,
     MassegeComponent,
+    ScrollHeightChangeDirective
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,7 @@
         placeholder="Search or start a new chat"
       />
     </div>
-    <div class="conversetion-container">
+    <div scrollHeight class="conversetion-container" (ngUpdateHeight)="update($event)">
       <app-conversation
         *ngFor="let conversetion of conversationList"
         [conversation]="conversetion"

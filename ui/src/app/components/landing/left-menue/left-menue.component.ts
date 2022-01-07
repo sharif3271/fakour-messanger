@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter, } from '@angular/core';
 import { ConversationServices } from 'src/app/service/conversation.service';
 import { IConversation } from 'src/app/models/conversation.model';
 import { MatDialog } from '@angular/material/dialog';
@@ -13,7 +13,6 @@ export class LeftMenueComponent implements OnInit {
   conversationList: IConversation[] = [];
   selectedConversetion!: IConversation;
   @Output() conversetionWasSelected = new EventEmitter<IConversation>();
-  
 
   constructor(private conversationService: ConversationServices, public dialog: MatDialog) {}
   openDialog(): void {
@@ -32,10 +31,16 @@ export class LeftMenueComponent implements OnInit {
       this.conversationList = res;
       // console.log(res);
     });
+    setTimeout(() => {
+      this.conversationList = [...this.conversationList, ...this.conversationList]
+    }, 5000)
   }
   onConversationSelected(conversetion:IConversation) {
     this.selectedConversetion = conversetion;
     this.conversetionWasSelected.emit(conversetion);
+  }
+  update(e: any) {
+    console.log({e});
   }
 }
 
