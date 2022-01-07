@@ -14,6 +14,7 @@ export class MessageComponent implements OnInit {
   amISender!: boolean;
   userAccountInfo!: IUserAccount;
   convertedDate!: string;
+  //TODO: Add replay option
 
   constructor(private accountService: AccountService, private dateService: DateService) {}
 

@@ -20,6 +20,7 @@ import { PasswordComponent } from './components/password/password.compnent';
 import { ConversationComponent } from './components/landing/left-menue/conversation/conversation.component';
 import { MessageComponent } from './components/landing/message-area/message/messege.component';
 import { FormsModule } from '@angular/forms';
+import { DateScrollDirecive } from './components/landing/message-area/date-scroll.directive';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { FormsModule } from '@angular/forms';
     UserselectionComponent,
     phoneVerification,
     MessageComponent,
-    PasswordComponent
+    PasswordComponent,
+    DateScrollDirecive
   ],
   imports: [
     BrowserModule,

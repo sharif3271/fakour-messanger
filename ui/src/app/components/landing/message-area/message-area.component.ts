@@ -5,6 +5,8 @@ import {
   Input,
   OnInit,
   ViewChild,
+  ChangeDetectionStrategy,
+  HostListener
 } from '@angular/core';
 import { IConversation, IMessage } from 'src/app/models/conversation.model';
 import { AccountService } from 'src/app/service/account.service';
@@ -15,6 +17,7 @@ import { DateService } from 'src/app/service/date.service';
   selector: 'app-message-area',
   templateUrl: './message-area.component.html',
   styleUrls: ['./message-area.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MessageAreaComponent implements OnInit, AfterViewChecked {
   messageText!: string;
@@ -24,6 +27,7 @@ export class MessageAreaComponent implements OnInit, AfterViewChecked {
   groupedChatMessages: { [key: string]: IMessage[] } = {};
   @Input() conversetion!: IConversation;
   @ViewChild('chatMessageArea', { static: false }) chatMessageArea!: ElementRef;
+
 
   constructor(
     private chatService: ChatService,
@@ -37,9 +41,12 @@ export class MessageAreaComponent implements OnInit, AfterViewChecked {
     this.groupChatMessage();
   }
   ngAfterViewChecked(): void {
-    if (this.numberOfMessages !== this.chatMessages.length){
-    this.chatMessageArea.nativeElement.scrollTop =
-      this.chatMessageArea.nativeElement.scrollHeight;
+    console.log(5);
+    if (this.numberOfMessages !== this.chatMessages.length) {
+      this.chatMessageArea.nativeElement.scrollTop =
+        this.chatMessageArea.nativeElement.scrollHeight;
+        this.numberOfMessages = this.chatMessages.length;
+
     }
   }
 

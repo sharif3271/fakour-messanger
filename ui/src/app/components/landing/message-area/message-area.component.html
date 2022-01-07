@@ -9,11 +9,18 @@
     </div>
   </div>
   <div class="chat-area">
-    <div class="chat-message-area" #chatMessageArea>
+    <div class="chat-message-area" #chatMessageArea scrollDate>
       <div class="empty-space"></div>
-      <ng-container *ngFor="let gp_msg of groupedChatMessages | keyvalue">
-        <div class="day-wraper">
-          <div class="day">{{ gp_msg.key }}</div>
+      <ng-container
+        *ngFor="let gp_msg of groupedChatMessages | keyvalue; let last = last"
+      >
+        <div
+          class="day-wraper"
+         
+        >
+          <div class="day">
+            {{ gp_msg.key }}
+          </div>
         </div>
 
         <app-message
