@@ -1,8 +1,12 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import {
-  IConversation,
-  IMessage
-} from 'src/app/models/conversation.model';
+  AfterViewChecked,
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+import { IConversation, IMessage } from 'src/app/models/conversation.model';
 import { AccountService } from 'src/app/service/account.service';
 import { ChatService } from 'src/app/service/chat.service';
 import { DateService } from 'src/app/service/date.service';
@@ -12,9 +16,10 @@ import { DateService } from 'src/app/service/date.service';
   templateUrl: './message-area.component.html',
   styleUrls: ['./message-area.component.scss'],
 })
-export class MessageAreaComponent implements OnInit {
+export class MessageAreaComponent implements OnInit, AfterViewChecked {
   messageText!: string;
   chatMessages!: IMessage[];
+  numberOfMessages!: number;
   // Grouped by time chat messages
   groupedChatMessages: { [key: string]: IMessage[] } = {};
   @Input() conversetion!: IConversation;
@@ -25,9 +30,17 @@ export class MessageAreaComponent implements OnInit {
     private accountService: AccountService,
     private dateService: DateService
   ) {}
+
   ngOnInit(): void {
     this.chatMessages = this.chatService.chatData;
+    this.numberOfMessages = this.chatMessages.length;
     this.groupChatMessage();
+  }
+  ngAfterViewChecked(): void {
+    if (this.numberOfMessages !== this.chatMessages.length){
+    this.chatMessageArea.nativeElement.scrollTop =
+      this.chatMessageArea.nativeElement.scrollHeight;
+    }
   }
 
   // TODO: Add animation to send message
@@ -52,18 +65,16 @@ export class MessageAreaComponent implements OnInit {
       this.messageText = '';
     }
     // TODO: Add animation to scroll to last message
-    // FIXME: Btter way for scrolling on last message (chatMessages length ) 
-    setTimeout(() => {
-      this.chatMessageArea.nativeElement.scrollTop =
-        this.chatMessageArea.nativeElement.scrollHeight;
-    }, 100);
+    // setTimeout(() => {
+    //   this.chatMessageArea.nativeElement.scrollTop =
+    //     this.chatMessageArea.nativeElement.scrollHeight;
+    // }, 100);
   }
 
   groupChatMessage() {
     for (let msg of this.chatMessages) {
       this.addToGroupMessage(msg);
     }
-    console.log(this.groupedChatMessages);
   }
 
   addToGroupMessage(newMsg: IMessage) {
