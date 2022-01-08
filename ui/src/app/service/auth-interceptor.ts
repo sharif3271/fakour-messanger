@@ -11,7 +11,7 @@ export class AuthInterceptor implements HttpInterceptor {
     constructor(private platformLocation: PlatformLocation) {}    
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const token = localStorage.getItem('token');
-        if (!token || this.jwtHelper.isTokenExpired(token)) {
+        if (!token/* || this.jwtHelper.isTokenExpired(token)*/) {
             // if there is no token OR the token is expired then go to login page.
             localStorage.clear();
             // window.location.href = (this.platformLocation as any).location.origin + '/login';

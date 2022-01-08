@@ -21,7 +21,7 @@ import { ConversationComponent } from './components/landing/left-menue/conversat
 import { MessageComponent } from './components/landing/message-area/message/messege.component';
 import { FormsModule } from '@angular/forms';
 import { DateScrollDirecive } from './components/landing/message-area/date-scroll.directive';
-
+import { ScrollHeightChangeDirective } from './directives/scrollHeightChange.directive';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import { DateScrollDirecive } from './components/landing/message-area/date-scrol
     phoneVerification,
     MessageComponent,
     PasswordComponent,
-    DateScrollDirecive
+    DateScrollDirecive,
+    ScrollHeightChangeDirective
   ],
   imports: [
     BrowserModule,

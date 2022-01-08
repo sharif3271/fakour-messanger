@@ -20,7 +20,7 @@
         (input)="onConversationSearch($event)"
       />
     </div>
-    <div class="conversetions-container">
+    <div scrollHeight class="conversetion-container" (ngUpdateHeight)="update($event)">
       <app-conversation
         *ngFor="let conversetion of conversationList"
         [conversation]="conversetion"
