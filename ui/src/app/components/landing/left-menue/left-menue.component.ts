@@ -26,7 +26,6 @@ export class LeftMenueComponent implements OnInit {
     private accountService: AccountService
   ) {}
 
-
   ngOnInit(): void {
     this.conversationService.getAllConversations().subscribe((res) => {
       this.initalconversationList = res;
@@ -36,8 +35,11 @@ export class LeftMenueComponent implements OnInit {
 
     this.userAccountInfo = this.accountService.accountInfo;
     setTimeout(() => {
-      this.conversationList = [...this.conversationList, ...this.conversationList]
-    }, 5000)
+      this.conversationList = [
+        ...this.conversationList,
+        ...this.conversationList,
+      ];
+    }, 5000);
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(UserselectionComponent, {
@@ -51,15 +53,13 @@ export class LeftMenueComponent implements OnInit {
     });
   }
 
-
   onConversationSelected(conversetion: IConversation) {
     this.selectedConversetion = conversetion;
     this.conversetionWasSelected.emit(conversetion);
   }
   update(e: any) {
-    console.log({e});
+    console.log({ e });
   }
-
 
   onConversationSearch(event: Event) {
     let searchInput = (<HTMLInputElement>event.target).value;

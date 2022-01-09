@@ -41,7 +41,9 @@ export class MessageAreaComponent implements OnInit, AfterViewChecked {
     this.groupChatMessage();
   }
   ngAfterViewChecked(): void {
-    console.log(5);
+    // Scroll chat message area to bottom when one message sent
+    // console.log(5);
+    // console.log(this.chatMessageArea.nativeElement.scrollTop);
     if (this.numberOfMessages !== this.chatMessages.length) {
       this.chatMessageArea.nativeElement.scrollTop =
         this.chatMessageArea.nativeElement.scrollHeight;

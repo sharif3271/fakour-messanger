@@ -7,11 +7,11 @@ export class DateScrollDirecive implements OnInit {
 
   @HostListener('scroll',['$event']) onScroll($event: Event): void {
     
-    console.log($event);
+    //console.log($event);
   }
 
   ngOnInit(): void {
-      console.log("asd");
+      //console.log("asd");
   }
 
   // constructor(private renderer2: Renderer2) {
