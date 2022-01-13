@@ -1,4 +1,4 @@
-.login-form{
+ .login-form{
   position: relative;
   width: 19vw;
   min-height: 325px;
@@ -15,12 +15,7 @@
   border-radius: 5px;
 
 }
-.form-header> p{
-  color: #2C7D78;
-  padding-left: 12px;
-  font-size: 16px;
-  margin: 0%;
-}
+
 .form-header{
   width: 100%;
   min-height: 36px;
@@ -29,6 +24,12 @@
   background-color: #EEEEEE;
   border-radius: 4px;
   
+}
+.form-header> p{
+  color: #2C7D78;
+  padding-left: 12px;
+  font-size: 16px;
+  margin: 0;
 }
 .login-form > form{
   display: flex;
@@ -45,6 +46,11 @@
   min-height: 40px;
   width: 100%;
   border-radius: 4px;
+}
+button{
+  position: absolute;
+  right: 0;
+  border: none;
 }
 .btn{
   background-color: #009688;
@@ -71,11 +77,27 @@ input::placeholder
 input.ng-invalid.ng-touched{
   border: 1px solid red;
 }
+
+.pass-txt {
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 65px;
+}
 .pass-txt a{
+  justify-content: center;
+  align-items: center;
   color: #009688;
-  margin: 60px;
-  }
- .account-txt a{
-    color: #009688;
-    margin: 55px;
-  }
+}
+.account-txt{
+ margin-top: 20px;
+ justify-content: center;
+ align-items: center;
+ padding-left: 57px;
+}
+.account-txt a{
+  justify-content: center;
+  align-items: center;
+  color: #009688;
+
+}
